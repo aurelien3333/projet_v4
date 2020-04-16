@@ -4,12 +4,13 @@
     <meta charset="utf-8" />
     <title>Mon blog</title>
     <link href="../public/css/style.css" rel="stylesheet" />
+    <link href="../public/css/reset.css" rel="stylesheet"/>
 </head>
 
 <body>
 <h1>Mon super blog !</h1>
 <p>Derniers billets du blog :</p>
-
+<a href="./index.php?action=admin">Aller sur l'admin</a>
 
 <?php
 while ($donnees = $posts->fetch())

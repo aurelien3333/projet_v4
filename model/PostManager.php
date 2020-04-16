@@ -17,9 +17,11 @@ class PostManager extends Manager
 
     }
 
-    public function createPost($author, $content)
+    public function createPost($title, $content, $author)
     {
-
+        $db = $this->dbConnect();
+        $req = $db->prepare('INSERT INTO posts(author, title, content, creation_date) VALUES(?, ?, ?, NOW())');
+        $req->execute(array($author, $title, $content));
     }
 
     public function updatePost($id)

@@ -1,0 +1,13 @@
+.tableau_article_admin{
+
+}
+.tableau_article_admin_entete{
+    background-color: lightgrey;
+}
+.tableau_article_admin_entete > td,
+.tableau_article_admin > td{
+    padding: 5px 20px
+}
+table {
+    border-spacing: 0;
+}
