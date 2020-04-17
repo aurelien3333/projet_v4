@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Mon blog</title>
-    <link href="../public/css/style.css" rel="stylesheet" />
-    <link href="../public/css/reset.css" rel="stylesheet"/>
-</head>
-
-<body>
+<?php ob_start(); ?>
 <h1>Mon super blog !</h1>
+<!--carnet de note d'un ecrivain-->
+
 <p>Derniers billets du blog :</p>
 <a href="./index.php?action=admin">Aller sur l'admin</a>
 
@@ -19,7 +12,7 @@ while ($donnees = $posts->fetch())
     <div class="news">
         <h3>
             <?php echo htmlspecialchars($donnees['title']); ?>
-            <em>le <?php echo $donnees['creation_date']; ?></em>
+            <em>le <?php echo $donnees['creation_date_fr']; ?></em>
         </h3>
 
         <p>
@@ -32,5 +25,5 @@ while ($donnees = $posts->fetch())
 }
 $posts->closeCursor();
 ?>
-</body>
-</html>
+<?php $content = ob_get_clean(); ?>
+<?php require('template.php'); ?>

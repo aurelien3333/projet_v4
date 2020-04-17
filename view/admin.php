@@ -1,19 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <title>Mon blog</title>
-    <link href="../public/css/style.css" rel="stylesheet"/>
-    <link href="../public/css/reset.css" rel="stylesheet"/>
-</head>
-
-<body>
+<?php ob_start(); ?>
 <h1>Mon super blog !</h1>
 <a href="./index.php?action=readPost">Rediger un article</a>
 <table>
 <tr class="tableau_article_admin_entete">
     <td>Titre</td>
     <td>Date de création</td>
+    <td>Aperçu</td>
     <td>Voir l'article</td>
     <td>Voir comentaire</td>
     <td>Editer</td>
@@ -26,7 +18,8 @@ while ($donnees = $posts->fetch()) {
     <br/>
     <tr class="tableau_article_admin">
         <td><?=htmlspecialchars($donnees['title'])?></td>
-        <td><?=$donnees['creation_date']?></td>
+        <td><?=$donnees['creation_date_fr']?></td>
+        <td>**</td>
         <td>**</td>
         <td>**</td>
         <td>**</td>
@@ -37,5 +30,5 @@ while ($donnees = $posts->fetch()) {
 $posts->closeCursor();
 ?>
 </table>
-</body>
-</html>
+<?php $content = ob_get_clean(); ?>
+<?php require('template.php'); ?>

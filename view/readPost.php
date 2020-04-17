@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Mon blog</title>
-    <link href="../public/css/style.css" rel="stylesheet" />
-    <link href="../public/css/reset.css" rel="stylesheet"/>
-</head>
 
-<body>
+<?php ob_start(); ?>
 <h1>Mon super blog !</h1>
 <p>Rédiger un article</p>
 
@@ -26,7 +18,6 @@
     <br />
     <button type="submit">Publier</button>
 </form>
+<?php $content = ob_get_clean(); ?>
 
-
-</body>
-</html>
+<?php require('template.php'); ?>

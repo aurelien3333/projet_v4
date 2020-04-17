@@ -2,12 +2,17 @@
 
 }
 .tableau_article_admin_entete{
-    background-color: lightgrey;
+   background-color: lightgrey;
+
 }
-.tableau_article_admin_entete > td,
-.tableau_article_admin > td{
-    padding: 5px 20px
+td,th{
+    padding: 5px 20px;
+    border: 1px solid black;
 }
 table {
     border-spacing: 0;
+    border: 1px solid black;
+    border-collapse:collapse;
+    width: 95%;
+    margin: auto;
 }
