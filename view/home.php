@@ -1,21 +1,21 @@
 <?php ob_start(); ?>
-<h1>Mon super blog !</h1>
-<!--carnet de note d'un ecrivain-->
 
-<p>Derniers billets du blog :</p>
-<a href="./index.php?action=admin">Aller sur l'admin</a>
+<div class="home">
+<h2 class="home__titre">Derniers billets du blog</h2>
+
 
 <?php
 while ($donnees = $posts->fetch())
 {
     ?>
-    <div class="news">
-        <h3>
+    <div class="posts">
+        <h3 class="home__posts__titre">
             <?php echo htmlspecialchars($donnees['title']); ?>
-            <em>le <?php echo $donnees['creation_date_fr']; ?></em>
+            <span class="home__posts__titre__date">le <?php echo $donnees['creation_date_fr']; ?></span>
         </h3>
 
-        <p>
+
+        <p class="home__contenu__posts">
             <?php
             echo nl2br(htmlspecialchars($donnees['content']));
             ?>
@@ -27,3 +27,4 @@ $posts->closeCursor();
 ?>
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php'); ?>
+</div>

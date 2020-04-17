@@ -1,5 +1,4 @@
 <?php ob_start(); ?>
-<h1>Mon super blog !</h1>
 <a href="./index.php?action=readPost">Rediger un article</a>
 <table>
 <tr class="tableau_article_admin_entete">
