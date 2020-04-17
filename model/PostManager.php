@@ -7,7 +7,7 @@ class PostManager extends Manager
     public function getPosts()
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %H:%i\') AS creation_date_fr FROM posts ORDER BY creation_date DESC');
+        $req = $db->query('SELECT id, title, content,author, DATE_FORMAT(creation_date, \'%d/%m/%Y à %H:%i\') AS creation_date_fr FROM posts ORDER BY creation_date DESC');
 
         return $req;
     }
@@ -31,11 +31,9 @@ class PostManager extends Manager
 
     public function deletePost($id)
     {
-
+        $db = $this->dbConnect();
+        $req = $db->prepare('DELETE FROM posts WHERE id = :id');
+        $req->bindParam(':id', $id, PDO::PARAM_INT);
+        $req->execute();
     }
-
-
-
-
-
 }

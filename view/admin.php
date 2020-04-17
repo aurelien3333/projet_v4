@@ -6,10 +6,9 @@
     <td>Titre</td>
     <td>Date de création</td>
     <td>Aperçu</td>
-    <td>Voir l'article</td>
-    <td>Voir comentaire</td>
-    <td>Editer</td>
-    <td>Supprimer</td>
+    <td>Auteur</td>
+    <td>Comentaire</td>
+    <td>Gestion article</td>
 </tr>
 
 <?php
@@ -20,10 +19,13 @@ while ($donnees = $posts->fetch()) {
         <td><?=htmlspecialchars($donnees['title'])?></td>
         <td><?=$donnees['creation_date_fr']?></td>
         <td>**</td>
-        <td>**</td>
-        <td>**</td>
-        <td>**</td>
-        <td>**</td>
+        <td><?=$donnees['author']?></td>
+        <td>14 Commentaire(s) Voir</td>
+        <td>
+            <a href="" title="Voir l'article"><i class="far fa-eye tableau_article_admin__view"></i></a>
+            <a href="" title="Modifier l'article"><i class="far fa-edit tableau_article_admin__edit"></i></a>
+            <a href="./index.php?action=removePost&amp;id=<?= $donnees['id'] ?>" title="Effacer l'article"><i class="far fa-trash-alt tableau_article_admin__delete"></i></a>
+        </td>
     </tr>
     <?php
 }
