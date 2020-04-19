@@ -1,18 +1,27 @@
 <?php
 require_once ('Manager.php');
 
+
+
 class PostManager extends Manager
 {
+    private $db;
+
+    public function __construct()
+    {
+        $this->db = new Manager();
+    }
 
     public function getPosts()
     {
+
         $db = $this->dbConnect();
         $req = $db->query('SELECT id, title, content,author, DATE_FORMAT(creation_date, \'%d/%m/%Y à %H:%i\') AS creation_date_fr FROM posts ORDER BY creation_date DESC');
 
         return $req;
     }
 
-    public function getPost($id)
+    public function get($id)
     {
 
     }
