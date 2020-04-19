@@ -1,5 +1,6 @@
 <?php
 require_once ('Manager.php');
+require_once ('Post.php');
 
 
 
@@ -12,17 +13,28 @@ class PostManager extends Manager
         $this->db = new Manager();
     }
 
-    public function getPosts()
+    public function getList()   //new ok
     {
+        $posts = [];
 
         $db = $this->dbConnect();
-        $req = $db->query('SELECT id, title, content,author, DATE_FORMAT(creation_date, \'%d/%m/%Y à %H:%i\') AS creation_date_fr FROM posts ORDER BY creation_date DESC');
+        $req = $db->query('SELECT id, title, content, author, DATE_FORMAT(creation_date, \'%d/%m/%Y à %H:%i\') AS creation_date_fr FROM posts ORDER BY creation_date DESC');
 
-        return $req;
+        while ($donnees = $req->fetch(PDO::FETCH_ASSOC))
+        {
+            $posts[] = new Post($donnees);
+        }
+        return $posts;
     }
 
-    public function get($id)
+    public function get($id)        //new ok
     {
+        $id = (int) $id;
+        $db = $this->dbConnect();
+        $req = $db->query('SELECT id, title, content, author, DATE_FORMAT(creation_date, \'%d/%m/%Y à %H:%i\') AS creation_date_fr FROM posts WHERE id ='.$id);
+        $donnees = $req->fetch(PDO::FETCH_ASSOC);
+        return new Post($donnees);
+
 
     }
 

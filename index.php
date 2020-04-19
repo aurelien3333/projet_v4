@@ -12,11 +12,17 @@ if (isset($_GET['action'])) {
     } elseif ($_GET['action'] === 'admin') {
         ConnectAdmin();
     } elseif ($_GET['action'] === 'removePost') {
-        if (!empty($_GET['id']) && (int) $_GET['id'] > 0) {
+        if (!empty($_GET['id']) && (int)$_GET['id'] > 0) {
             removePost($_GET['id']);
         }
         ConnectAdmin();
+    } elseif ($_GET['action'] === 'singlePost') {
+        if (!empty($_GET['id']) && (int)$_GET['id'] > 0) {
+            getPost($_GET['id']);
+        }
+
     }
+
 
 } else {
     listPosts();

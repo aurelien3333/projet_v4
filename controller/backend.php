@@ -17,7 +17,7 @@ function addPost($title, $content, $author){
 function ConnectAdmin()
 {
     $postManager = new PostManager();
-    $posts = $postManager->getPosts();
+    $posts= $postManager->getList();
     require ('./view/admin.php');
 }
 
