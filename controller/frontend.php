@@ -16,6 +16,9 @@ function getPost($id)
 {
     $postManager = new PostManager();
     $posts= $postManager->get($id);
+
+    $commentManager = new CommentManager();
+    $comments = $commentManager->getListByPostId($id);
     require('./view/singlePost.php');
 
 }

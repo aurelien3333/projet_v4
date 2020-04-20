@@ -26,6 +26,9 @@ if (isset($_GET['action'])) {
         }
     }elseif ($_GET['action'] === 'updatePost') {
         updatePost($_POST['title_post'], $_POST['content_post'], $_POST['author_post'], $_GET['id']);
+    }elseif ($_GET['action'] === 'addComment') {
+        addComment($_GET['postId'], $_POST['author_comment'], $_POST['content_comment']);
+//        getPost($_GET['id']);
     }
 
 } else {

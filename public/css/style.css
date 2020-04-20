@@ -52,6 +52,7 @@ table {
 .header__menu__item{
     text-decoration: none;
     color: white;
+    margin-right: 25px;
 }
 
 /*article liste page home*/
@@ -81,4 +82,27 @@ table {
     background-color: lightgrey;
     padding: 10px;
     margin: 0 0 10px 0;
+}
+.home__contenu__posts__btn-lire-la-suite{
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    border: 1px solid gray;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    background-color: darkgray;
+    padding: 5px;
+    margin: 5px auto;
+}
+
+/*page article seul*/
+
+.comment__add_form{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 10px auto ;
+    text-align: center;
 }

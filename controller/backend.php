@@ -2,6 +2,8 @@
 
 require_once('./model/PostManager.php');
 require_once('./model/Post.php');
+require_once('./model/Comment.php');
+require_once('./model/CommentManager.php');
 
 function readPost()
 {
@@ -58,4 +60,16 @@ function updatePost($title, $content, $author, $id)
     $postManager->update($post);
 
     header('Location: ./index.php?action=admin');
+}
+
+function addComment($postId, $author, $comment){
+    $comment = new Comment([
+        'post_id' => $postId,
+        'comment' => $comment,
+        'author' => $author
+    ]);
+    $commentManager = new CommentManager();
+    $commentManager->add($comment);
+
+    header('Location: ./index.php?action=singlePost&id=' .$postId);
 }

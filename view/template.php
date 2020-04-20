@@ -13,10 +13,11 @@
 <body>
 <div class="header">
     <div class="header__logo">
-    <img src="./public/img/logo_blanc.png" alt="" class="header__logo__img">
+    <img src="./public/img/logo_blanc.png" alt="logo" class="header__logo__img">
     <h1 class="header__logo__titre">Carnet de note <br/>d'un écrivain</h1>
     </div>
     <div class="header__menu">
+        <a class="header__menu__item" href="./index.php?action=listPosts">Blog</a>
         <a class="header__menu__item" href="./index.php?action=admin">Aller sur l'admin</a>
     </div>
 </div>
