@@ -23,7 +23,7 @@ for ($i = 0; $i < count($posts); $i++){
         <td>14 Commentaire(s) Voir</td>
         <td>
             <a href="./index.php?action=singlePost&amp;id=<?=$posts[$i]->getId()?>" title="Voir l'article"><i class="far fa-eye tableau_article_admin__view"></i></a>
-            <a href="" title="Modifier l'article"><i class="far fa-edit tableau_article_admin__edit"></i></a>
+            <a href="./index.php?action=modifiedPost&amp;id=<?=$posts[$i]->getId()?>" title="Modifier l'article"><i class="far fa-edit tableau_article_admin__edit"></i></a>
             <a href="./index.php?action=removePost&amp;id=<?=$posts[$i]->getId()?>" title="Effacer l'article"><i class="far fa-trash-alt tableau_article_admin__delete"></i></a>
         </td>
     </tr>

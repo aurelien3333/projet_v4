@@ -20,9 +20,13 @@ if (isset($_GET['action'])) {
         if (!empty($_GET['id']) && (int)$_GET['id'] > 0) {
             getPost($_GET['id']);
         }
-
+    } elseif ($_GET['action'] === 'modifiedPost') {
+        if (!empty($_GET['id']) && (int)$_GET['id'] > 0) {
+            ModifiedPost($_GET['id']);
+        }
+    }elseif ($_GET['action'] === 'updatePost') {
+        updatePost($_POST['title_post'], $_POST['content_post'], $_POST['author_post'], $_GET['id']);
     }
-
 
 } else {
     listPosts();

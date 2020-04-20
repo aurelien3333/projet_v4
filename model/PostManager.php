@@ -13,7 +13,7 @@ class PostManager extends Manager
         $this->db = new Manager();
     }
 
-    public function getList()   //new ok
+    public function getList()
     {
         $posts = [];
 
@@ -27,8 +27,8 @@ class PostManager extends Manager
         return $posts;
     }
 
-    public function get($id)        //new ok
-    {
+    public function get($id)
+        {
         $id = (int) $id;
         $db = $this->dbConnect();
         $req = $db->query('SELECT id, title, content, author, DATE_FORMAT(creation_date, \'%d/%m/%Y à %H:%i\') AS creation_date_fr FROM posts WHERE id ='.$id);
@@ -38,23 +38,37 @@ class PostManager extends Manager
 
     }
 
-    public function createPost($title, $content, $author)
+    public function add(Post $post)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('INSERT INTO posts(author, title, content, creation_date) VALUES(?, ?, ?, NOW())');
-        $req->execute(array($author, $title, $content));
-    }
+        $req = $db->prepare('INSERT INTO posts(author, title, content, creation_date) VALUES(:author, :title, :content, :creation_date)');
 
-    public function updatePost($id)
-    {
+        $req->bindValue(':author', $post->getAuthor() ,PDO::PARAM_STR);
+        $req->bindValue(':title', $post->getTitle(), PDO::PARAM_STR);
+        $req->bindValue(':content', $post->getContent(), PDO::PARAM_STR);
+        $req->bindValue(':creation_date', date('Y-m-d H:i:s'), PDO::PARAM_STR);
 
-    }
-
-    public function deletePost($id)
-    {
-        $db = $this->dbConnect();
-        $req = $db->prepare('DELETE FROM posts WHERE id = :id');
-        $req->bindParam(':id', $id, PDO::PARAM_INT);
         $req->execute();
+    }
+
+    public function update(Post $post)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('UPDATE posts SET author = :author, title = :title, content = :content, creation_date = :creation_date WHERE id = :id');
+
+        $req->bindValue(':author', $post->getAuthor() ,PDO::PARAM_STR);
+        $req->bindValue(':title', $post->getTitle(), PDO::PARAM_STR);
+        $req->bindValue(':content', $post->getContent(), PDO::PARAM_STR);
+        $req->bindValue(':creation_date', date('Y-m-d H:i:s'), PDO::PARAM_STR);
+        $req->bindValue(':id', $post->getId(), PDO::PARAM_INT);
+
+        $req->execute();
+    }
+
+    public function delete(Post $post)
+    {
+        $db = $this->dbConnect();
+        $db->exec('DELETE FROM posts WHERE id = '.$post->getId());
+
     }
 }
