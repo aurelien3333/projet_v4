@@ -7,6 +7,8 @@ class Comment
     private $_comment;
     private $_author;
     private $_comment_date_fr;
+    private $_title_post;
+
 
     public function __construct(array $donnees)
     {
@@ -30,6 +32,20 @@ class Comment
         if (isset($donnees['comment_date_fr'])) {
             $this->setCommentDateFr($donnees['comment_date_fr']);
         }
+        if (isset($donnees['title_post'])) {
+            $this->setTitlePost($donnees['title_post']);
+        }
+    }
+
+
+    public function getTitlePost()
+    {
+        return $this->_title_post;
+    }
+
+    public function setTitlePost($title_post)
+    {
+        $this->_title_post = $title_post;
     }
 
     public function getId()

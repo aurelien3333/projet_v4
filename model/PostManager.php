@@ -6,13 +6,15 @@ require_once ('Post.php');
 
 class PostManager extends Manager
 {
-    private $db;
+  /*  private $db;
 
     public function __construct()
     {
         $this->db = new Manager();
-    }
-
+    }*/
+    /**
+     * @return Post[]
+     */
     public function getList()
     {
         $posts = [];

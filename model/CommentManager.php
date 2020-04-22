@@ -26,13 +26,16 @@ class CommentManager extends Manager
         }
         return $comments;
     }
+    function countCommentByPostId($id){
+
+    }
 
     public function getList()
     {
         $comments = [];
 
         $db = $this->dbConnect();
-        $req = $db->query('SELECT id, post_id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %H:%i\') AS comment_date_fr FROM comments ORDER BY comment_date DESC');
+        $req = $db->query('SELECT c.id AS id, post_id, c.author AS author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %H:%i\') AS comment_date_fr, p.title as title_post FROM comments AS c LEFT JOIN posts AS p ON c.post_id = p.id ORDER BY comment_date DESC');
 
         while ($donnees = $req->fetch(PDO::FETCH_ASSOC))
         {

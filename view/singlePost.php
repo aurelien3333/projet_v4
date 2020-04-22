@@ -37,8 +37,7 @@
         <div class="comment__add">
             <form action="index.php?action=addComment&amp;postId=<?= $posts->getId(); ?>" class="comment__add_form"
                   method="post">
-                <label for="author_comment">Votre pseudo</label>
-                <input type="text" id="author_comment" name="author_comment">
+                <input type="text" id="author_comment" name="author_comment" value="Votre pseudo">
                 <label for="content_comment">Rédigez votre commentaire</label>
                 <textarea name="content_comment" id="content_comment"></textarea>
                 <button type="submit">Poster votre commentaire</button>

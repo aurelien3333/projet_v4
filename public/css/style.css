@@ -21,6 +21,12 @@ table {
     margin: auto;
 }
 
+/* Page admin */
+
+.admin__article__titre{
+    text-align: center;
+}
+
 /*header blog*/
 .header {
     padding-left: 20px;

@@ -1,12 +1,13 @@
 <?php
 
-require_once('./model/PostManager.php');
-require_once('./model/Post.php');
+require_once('model/PostManager.php');
+require_once('model/Post.php');
 
 
 function listPosts()
 {
     $postManager = new PostManager();
+    /** @var $posts Post[]  */
     $posts= $postManager->getList();
 
     require('./view/home.php');
@@ -15,7 +16,7 @@ function listPosts()
 function getPost($id)
 {
     $postManager = new PostManager();
-    $posts= $postManager->get($id);
+    $posts = $postManager->get($id);
 
     $commentManager = new CommentManager();
     $comments = $commentManager->getListByPostId($id);
