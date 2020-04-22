@@ -15,7 +15,7 @@
             <tr class="tableau_article_admin">
                 <td><?= $posts[$i]->getTitle(); ?></td>
                 <td><?= $posts[$i]->getCreationDateFr(); ?></td>
-                <td><?= substr($posts[$i]->getContent(), 0, 80); ?></td>
+                <td><?= strip_tags(substr($posts[$i]->getContent(), 0, 80)); ?></td>
                 <td><?= $posts[$i]->getAuthor(); ?></td>
                 <td>14 Commentaire(s) Voir</td>
                 <td>

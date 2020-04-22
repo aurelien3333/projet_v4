@@ -41,6 +41,13 @@ function removePost($id)
     $post = $postManager->get($id);
     $postManager->delete($post);
 
+    $commentManger = new CommentManager();
+    $comments = $commentManger->getListByPostId($id);
+
+    for ($i = 0; $i < count($comments); $i++) {
+        $commentManger->delete($comments[$i]);
+    }
+
     header('Location: ./index.php?action=admin');
 }
 

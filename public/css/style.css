@@ -27,6 +27,14 @@ table {
     text-align: center;
 }
 
+/* page ecrire un article */
+
+#mce{
+    width: 80%;
+    height: 600px;
+    margin: auto;
+}
+
 /*header blog*/
 .header {
     padding-left: 20px;

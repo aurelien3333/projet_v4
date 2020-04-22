@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Josefin+Slab&display=swap"
           rel="stylesheet">
     <script src="https://kit.fontawesome.com/5fe9b3ed11.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tiny.cloud/1/1n8csunmkzvlgckt4jn8mfm5ynt3kf6dpelgp5kqrqwq1kb8/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 
 <body>

@@ -16,7 +16,7 @@
 
 
             <p class="home__contenu__posts">
-                <?= substr($posts[$i]->getContent(), 0, 500); ?>
+                <?= strip_tags(substr($posts[$i]->getContent(), 0, 300)); ?>
                 <a class="home__contenu__posts__btn-lire-la-suite"
                    href="./index.php?action=singlePost&amp;id=<?= $posts[$i]->getId() ?>">Lire la suite</a>
             </p>

@@ -14,10 +14,20 @@
     <br />
     <label for="content_post">Redigez votre article</label>
     <br />
-    <textarea id="content_post" name="content_post"><?= $post->getContent();?></textarea>
+    <textarea id="mce" name="content_post"><?= $post->getContent();?></textarea>
     <br />
     <button type="submit">Publier</button>
 </form>
+
+<script>
+	tinymce.init({
+		selector: 'textarea#mce',
+		toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent'
+		entity_encoding : "raw"
+
+	});
+</script>
+
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>
