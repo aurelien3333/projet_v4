@@ -11,20 +11,20 @@
             <td>Gestion article</td>
         </tr>
 
+
         <?php for ($i = 0; $i < count($posts); $i++) : ?>
             <tr class="tableau_article_admin">
                 <td><?= $posts[$i]->getTitle(); ?></td>
                 <td><?= $posts[$i]->getCreationDateFr(); ?></td>
-                <td><?= strip_tags(substr($posts[$i]->getContent(), 0, 80)); ?></td>
+                <td><?= strip_tags(substr($posts[$i]->getContent(), 0, 200)); ?></td>
                 <td><?= $posts[$i]->getAuthor(); ?></td>
-                <td>14 Commentaire(s) Voir</td>
+                <td><?= count($commentManager->getListByPostId($posts[$i]->getId())); ?> Commentaire(s)</td>
                 <td>
                     <a href="./index.php?action=singlePost&amp;id=<?= $posts[$i]->getId() ?>" title="Voir l'article"><i
                                 class="far fa-eye tableau_article_admin__view"></i></a>
                     <a href="./index.php?action=modifiedPost&amp;id=<?= $posts[$i]->getId() ?>"
                        title="Modifier l'article"><i class="far fa-edit tableau_article_admin__edit"></i></a>
-                    <a href="./index.php?action=removePost&amp;id=<?= $posts[$i]->getId() ?>" title="Effacer l'article"><i
-                                class="far fa-trash-alt tableau_article_admin__delete"></i></a>
+                    <a href="./index.php?action=removePost&amp;id=<?= $posts[$i]->getId() ?>" title="Effacer l'article"><i class="far fa-trash-alt tableau_article_admin__delete"></i></a>
                 </td>
             </tr>
         <?php endfor; ?>
@@ -38,7 +38,6 @@
             <td>Article</td>
             <td>Action</td>
         </tr>
-
         <?php
 
         for ($i = 0; $i < count($comments); $i++) {
@@ -49,7 +48,7 @@
                 <td><?= $comments[$i]->getComment() ?></td>
                 <td><?= $comments[$i]->getTitlePost(); ?></td>
                 <td>
-
+                    <a href="./index.php?action=removeComment&amp;id=<?= $comments[$i]->getId() ?>" title="Effacer l'article"><i class="far fa-trash-alt tableau_article_admin__delete"></i></a>
                 </td>
             </tr>
             <?php

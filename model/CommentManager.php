@@ -18,7 +18,7 @@ class CommentManager extends Manager
         $comments = [];
 
         $db = $this->dbConnect();
-        $req = $db->query('SELECT id, post_id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %H:%i\') AS comment_date_fr FROM comments WHERE post_id = '.$postId);
+        $req = $db->query('SELECT id, post_id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %H h %i min\') AS comment_date_fr FROM comments WHERE post_id = '.$postId);
 
         while ($donnees = $req->fetch(PDO::FETCH_ASSOC))
         {
@@ -26,9 +26,7 @@ class CommentManager extends Manager
         }
         return $comments;
     }
-    function countCommentByPostId($id){
 
-    }
 
     public function getList()
     {

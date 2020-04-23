@@ -30,6 +30,8 @@ function ConnectAdmin()
     $posts = $postManager->getList();
     $commentManager = new CommentManager();
     $comments = $commentManager->getList();
+    /*$test = count($commentManager->getListByPostId(48));
+    var_dump($test);die();*/
 
 
     require ('./view/admin.php');
@@ -47,6 +49,15 @@ function removePost($id)
     for ($i = 0; $i < count($comments); $i++) {
         $commentManger->delete($comments[$i]);
     }
+
+    header('Location: ./index.php?action=admin');
+}
+function removeComment($id)
+{
+
+    $commentManger = new CommentManager();
+    $comment = $commentManger->get($id);
+    $commentManger->delete($comment);
 
     header('Location: ./index.php?action=admin');
 }

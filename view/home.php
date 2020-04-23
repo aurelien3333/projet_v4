@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
 
 <div class="home">
-    <h2 class="home__titre">Derniers billets du blog</h2>
+    <h2 class="home__titre">Derniers chapitres publiés</h2>
 
 
     <?php

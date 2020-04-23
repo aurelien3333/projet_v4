@@ -18,7 +18,7 @@
     <h1 class="header__logo__titre">Carnet de note <br/>d'un écrivain</h1>
     </div>
     <div class="header__menu">
-        <a class="header__menu__item" href="./index.php?action=listPosts">Blog</a>
+        <a class="header__menu__item" href="./index.php?action=listPosts">Billets</a>
         <a class="header__menu__item" href="./index.php?action=admin">Aller sur l'admin</a>
     </div>
 </div>

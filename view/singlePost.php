@@ -11,41 +11,40 @@
         </h3>
 
 
-        <p class="home__contenu__posts">
+        <div class="home__contenu__posts">
             <?= nl2br($posts->getContent());
             ?>
-        </p>
+        </div>
     </div>
     <div class="comment">
-        <h2 class="">Commentaires</h2>
-
-        <?php
-        for ($i = 0; $i < count($comments); $i++) {
-            ?>
-
-
-            <div class="comment__header">
-                <span class="comment__header__pseudo"><?= $comments[$i]->getAuthor(); ?></span>
-                <span class="comment__header__date">le <?= $comments[$i]->getCommentDateFr(); ?></span>
-            </div>
-            <div class="comment__content"><?= $comments[$i]->getComment(); ?></div>
-            <hr>
-            <?php
-        }
-        ?>
 
         <div class="comment__add">
-            <form action="index.php?action=addComment&amp;postId=<?= $posts->getId(); ?>" class="comment__add_form"
+            <h3 class="comment__add__title">Laisser un commentaire</h3>
+            <p class="comment__add__text">Votre adreese de messagerie ne sera pas publiée. Les champs obligatoires sont
+                indiqués avec *</p>
+            <form action="index.php?action=addComment&amp;postId=<?= $posts->getId(); ?>" class="comment__add__form"
                   method="post">
-                <input type="text" id="author_comment" name="author_comment" value="Votre pseudo">
-                <label for="content_comment">Rédigez votre commentaire</label>
-                <textarea name="content_comment" id="content_comment"></textarea>
-                <button type="submit">Poster votre commentaire</button>
+                <input type="text" id="author_comment" name="author_comment" placeholder="Nom *"
+                       class="comment__add__form__pseudo">
+                <input type="email" id="email_comment" name="email_comment" placeholder="Adresse de messagerie *"
+                       class="comment__add__form__email">
+                <textarea name="content_comment" id="content_comment" placeholder="Rédigez votre commentaire"
+                          class="comment__add__form__comment"></textarea>
+                <button type="submit" class="comment__add__form__button">Publier votre commentaire</button>
             </form>
         </div>
-
-
+        <h2 class=""><?= count($commentManager->getListByPostId($posts->getId())); ?> Commentaire</h2>
+        <?php for ($i = 0; $i < count($comments); $i++) : ?>
+            <div class="comment__display">
+                <span class="comment__display__pseudo"><?= $comments[$i]->getAuthor(); ?></span>
+                <span class="comment__display__date">le <?= $comments[$i]->getCommentDateFr(); ?></span>
+            </div>
+            <div class="comment__display__comment"><?= $comments[$i]->getComment(); ?></div>
+            <hr class="comment__display_tr">
+        <?php endfor; ?>
     </div>
+
     <?php $content = ob_get_clean(); ?>
     <?php require('template.php'); ?>
+
 </div>

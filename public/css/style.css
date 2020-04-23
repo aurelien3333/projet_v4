@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 /*Tableau de l'interface admin */
 .tableau_article_admin {
 
@@ -23,13 +27,13 @@ table {
 
 /* Page admin */
 
-.admin__article__titre{
+.admin__article__titre {
     text-align: center;
 }
 
 /* page ecrire un article */
 
-#mce{
+#mce {
     width: 80%;
     height: 600px;
     margin: auto;
@@ -45,10 +49,12 @@ table {
     justify-content: space-between;
     align-items: center;
 }
-.header__logo{
+
+.header__logo {
     display: flex;
     flex-direction: row;
 }
+
 .header__logo__titre {
     color: white;
     margin: 0;
@@ -56,30 +62,35 @@ table {
     font-family: 'Dancing Script', cursive;
     font-size: 38px;
 }
+
 .header__logo__img {
     height: 90px;
     width: auto;
 }
-.header__menu{
+
+.header__menu {
     padding-right: 20px;
 }
-.header__menu__item{
+
+.header__menu__item {
     text-decoration: none;
     color: white;
     margin-right: 25px;
 }
 
-/*article liste page home*/
-.home{
-    width: 80%;
+/*list article page home*/
+.home {
+    width: 960px;
     margin: auto;
 }
-.home__titre{
+
+.home__titre {
     text-align: center;
     margin: 20px;
     font-size: 32px;
 }
-.home__posts__titre{
+
+.home__posts__titre {
     background-color: darkgray;
     padding: 10px;
     margin: 0;
@@ -88,16 +99,19 @@ table {
     justify-content: space-between;
     align-items: center;
 }
-.home__posts__titre__date{
+
+.home__posts__titre__date {
     font-size: 16px;
     font-style: italic;
 }
-.home__contenu__posts{
+
+.home__contenu__posts {
     background-color: lightgrey;
     padding: 10px;
     margin: 0 0 10px 0;
 }
-.home__contenu__posts__btn-lire-la-suite{
+
+.home__contenu__posts__btn-lire-la-suite {
     text-decoration: none;
     text-align: center;
     color: black;
@@ -113,10 +127,53 @@ table {
 
 /*page article seul*/
 
-.comment__add_form{
+/* formulaire ajout commentaire */
+
+.comment__add {
     display: flex;
     flex-direction: column;
-    width: 40%;
-    margin: 10px auto ;
-    text-align: center;
+    width: 960px;
+    margin: auto;
+    border: dashed 1px #0089ec;
+    padding: 20px;
 }
+.comment__add__title {
+    margin: 0;
+    color: #0089ec;
+    font-size: 1.5em;
+}
+.comment__add__text {
+    color: gray;
+}
+.comment__add__form {
+    display: flex;
+    flex-direction: column;
+}
+.comment__add__form__pseudo, .comment__add__form__email, .comment__add__form__comment {
+    padding: 10px;
+    background-color: #F3F3F3;
+    border: none;
+    margin-top: 15px;
+}
+.comment__add__form__pseudo, .comment__add__form__email {
+    width:50%;
+}
+.comment__add__form__comment {
+    height: 150px;
+}
+.comment__add__form__button {
+    background-color: #0089ec;
+    margin: 20px auto 10px auto;
+    padding: 10px;
+    color: white;
+    width: 35%;
+    border-radius: 5px;
+    border: none;
+}
+
+/*Affichage des commentaire*/
+
+.comment__display__pseudo{
+    font-weight: bold;
+}
+
