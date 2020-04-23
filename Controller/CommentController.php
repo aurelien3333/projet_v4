@@ -1,7 +1,7 @@
 <?php
 
-require_once('./model/Comment.php');
-require_once('./model/CommentManager.php');
+require_once('./Model/Comment.php');
+require_once('./Model/CommentManager.php');
 
 class CommentController{
 

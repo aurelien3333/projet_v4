@@ -1,7 +1,8 @@
 <?php
-require_once('controller/AdminController.php');
-require_once('controller/CommentController.php');
-require_once('controller/PostController.php');
+require_once('Controller/AdminController.php');
+require_once('Controller/CommentController.php');
+require_once('Controller/PostController.php');
+require_once('Controller/UserController.php');
 
 if (isset($_GET['action'])) {
 
@@ -9,7 +10,21 @@ if (isset($_GET['action'])) {
         PostController::listPosts();
     } elseif ($_GET['action'] === 'readPost') {
         PostController::readPost();
-    } elseif ($_GET['action'] === 'addPost') {
+    }
+
+
+    elseif ($_GET['action'] === 'newConnexion'){
+        if (!empty($_POST['user_pseudo']) && !empty($_POST['user_pwd'])){
+            UserController::check($_POST['user_pseudo'], $_POST['user_pwd']);
+        }
+    }
+    elseif ($_GET['action'] === 'connexion') {
+        UserController::connexion();
+    }
+
+
+
+    elseif ($_GET['action'] === 'addPost') {
         if (!empty($_POST['title_post']) && !empty($_POST['content_post']) && !empty($_POST['author_post'])) {
             PostController::addPost($_POST['title_post'], $_POST['content_post'], $_POST['author_post']);
         }

@@ -20,6 +20,7 @@
     <div class="header__menu">
         <a class="header__menu__item" href="./index.php?action=listPosts">Billets</a>
         <a class="header__menu__item" href="./index.php?action=admin">Aller sur l'admin</a>
+        <a class="header__menu__item" href="./index.php?action=connexion">Connexion</a>
     </div>
 </div>
 

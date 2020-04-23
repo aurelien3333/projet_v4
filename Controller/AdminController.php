@@ -1,9 +1,9 @@
 <?php
 
-require_once('./model/PostManager.php');
-require_once('./model/Post.php');
-require_once('./model/Comment.php');
-require_once('./model/CommentManager.php');
+require_once('./Model/PostManager.php');
+require_once('./Model/Post.php');
+require_once('./Model/Comment.php');
+require_once('./Model/CommentManager.php');
 
 class AdminController{
 
@@ -14,7 +14,7 @@ class AdminController{
         $commentManager = new CommentManager();
         $comments = $commentManager->getList();
 
-        require ('./view/admin.php');
+        require ('./View/admin.php');
     }
 
 }

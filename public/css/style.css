@@ -177,3 +177,14 @@ table {
     font-weight: bold;
 }
 
+/*Page de connexion*/
+.connexion__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    margin: auto;
+}
+.connexion{
+    margin-top: 50px;
+}

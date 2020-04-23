@@ -1,16 +1,16 @@
 <?php
 
-require_once('./model/PostManager.php');
-require_once('./model/Post.php');
-require_once('./model/Comment.php');
-require_once('./model/CommentManager.php');
+require_once('./Model/PostManager.php');
+require_once('./Model/Post.php');
+require_once('./Model/Comment.php');
+require_once('./Model/CommentManager.php');
 
 class PostController
 {
 
     static function readPost()
     {
-        require('./view/readPost.php');
+        require('./View/readPost.php');
     }
 
     static function addPost($title, $content, $author)
@@ -48,7 +48,7 @@ class PostController
     {
         $postManager = new PostManager();
         $post = $postManager->get($id);
-        require('./view/modifiedPost.php');
+        require('./View/modifiedPost.php');
 
     }
 
@@ -71,7 +71,7 @@ class PostController
         $postManager = new PostManager();
         $posts = $postManager->getList();
 
-        require('./view/home.php');
+        require('./View/home.php');
     }
 
     static function getPost($id)
@@ -81,7 +81,7 @@ class PostController
 
         $commentManager = new CommentManager();
         $comments = $commentManager->getListByPostId($id);
-        require('./view/singlePost.php');
+        require('./View/singlePost.php');
 
     }
 }
