@@ -8,12 +8,12 @@ require_once('./model/CommentManager.php');
 class PostController
 {
 
-    function readPost()
+    static function readPost()
     {
         require('./view/readPost.php');
     }
 
-    function addPost($title, $content, $author)
+    static function addPost($title, $content, $author)
     {
 
         $post = new Post([
@@ -29,7 +29,7 @@ class PostController
     }
 
 
-    function removePost($id)
+    static function removePost($id)
     {
         $postManager = new PostManager();
         $post = $postManager->get($id);
@@ -44,7 +44,7 @@ class PostController
         header('Location: ./index.php?action=admin');
     }
 
-    function modifiedPost($id)
+    static function modifiedPost($id)
     {
         $postManager = new PostManager();
         $post = $postManager->get($id);
@@ -52,7 +52,7 @@ class PostController
 
     }
 
-    function updatePost($title, $content, $author, $id)
+    static function updatePost($title, $content, $author, $id)
     {
         $post = new Post([
             'title' => $title,
@@ -66,16 +66,15 @@ class PostController
         header('Location: ./index.php?action=admin');
     }
 
-    function listPosts()
+    static function listPosts()
     {
         $postManager = new PostManager();
-        /** @var $posts Post[] */
         $posts = $postManager->getList();
 
         require('./view/home.php');
     }
 
-    function getPost($id)
+    static function getPost($id)
     {
         $postManager = new PostManager();
         $posts = $postManager->get($id);

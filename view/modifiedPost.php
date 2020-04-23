@@ -1,7 +1,7 @@
 
+
 <?php ob_start(); ?>
 
-<p>Rédiger un article</p>
 
 <form action="index.php?action=updatePost&amp;id=<?= $post->getId();?>" method="post">
     <label for="title_post">Titre</label>
