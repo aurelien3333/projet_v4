@@ -5,7 +5,7 @@ require_once('./Model/CommentManager.php');
 
 class CommentController{
 
-    function addComment($postId, $author, $comment){
+    static function addComment($postId, $author, $comment){
         $comment = new Comment([
             'post_id' => $postId,
             'comment' => $comment,
@@ -16,7 +16,7 @@ class CommentController{
 
         header('Location: ./index.php?action=singlePost&id=' .$postId);
     }
-    function removeComment($id)
+    static function removeComment($id)
     {
 
         $commentManger = new CommentManager();

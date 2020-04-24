@@ -1,20 +1,47 @@
 <?php
 require_once('./Model/User.php');
 
-class UserController{
+class UserController
+{
 
-    static function connexion (){
+    static function connexion()
+    {
         require('./View/connexion.php');
     }
-    static function check ($pseudo, $pass){
-        $user = new User();
-        $connexion = $user->check($pseudo, $pass);
 
-        if ($connexion){
-            header('Location: ./index.php?action=admin');
+    public function check($pseudo, $pass)
+    {
+        $user = new User();
+        $user = $user->getPassByName($pseudo);
+        $this->verifyInfo($user, $pass);
+    }
+
+    private function verifyInfo($user, $pass)
+    {
+        if (!$user) {
+            echo "pseudo incorrect ";
         } else {
-            echo ('Mauvais pseudo ou mots de passe');
+            if (password_verify($pass,  $user[1])) {
+                echo 'connexion ok';
+                $this->startConnexion($user);
+            } else {
+                echo 'MDP incorrect';
+            }
         }
+    }
+
+    private function startConnexion($user){
+        $_SESSION['pass'] = $user[1];
+        $_SESSION['pseudo'] = $user[0];
+        echo 'Vous êtes connecté !';
+        header('Location: ./index.php?action=admin');
+    }
+
+    static function deleteConnexion (){
+
+        session_destroy();
+        header('Location: ./index.php');
+
     }
 
 }

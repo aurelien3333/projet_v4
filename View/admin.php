@@ -1,5 +1,4 @@
 <?php ob_start(); ?>
-    <a href="./index.php?action=readPost">Rediger un article</a>
     <h2 class="admin__article__titre">Gestion des articles</h2>
     <table>
         <tr class="tableau_article_admin_entete">

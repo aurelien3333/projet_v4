@@ -6,12 +6,6 @@ require_once ('Comment.php');
 
 class CommentManager extends Manager
 {
-    private $db;
-
-    public function __construct()
-    {
-        $this->db = new Manager();
-    }
 
     public function getListByPostId($postId)
     {
