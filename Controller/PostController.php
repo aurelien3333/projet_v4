@@ -1,4 +1,6 @@
 <?php
+//use Model\Post;
+
 
 require_once('./Model/PostManager.php');
 require_once('./Model/Post.php');
@@ -7,6 +9,12 @@ require_once('./Model/CommentManager.php');
 
 class PostController
 {
+    private $postManager;
+
+    public function __construct()
+    {
+        $this->postManager = new PostManager();
+    }
 
     static function readPost()
     {
@@ -15,7 +23,6 @@ class PostController
 
     static function addPost($title, $content, $author)
     {
-
         $post = new Post([
             'title' => $title,
             'content' => $content,
@@ -77,11 +84,11 @@ class PostController
     static function getPost($id)
     {
         $postManager = new PostManager();
-        $posts = $postManager->get($id);
+        $post = $postManager->get($id);
 
         $commentManager = new CommentManager();
         $comments = $commentManager->getListByPostId($id);
-        require('./View/singlePost.php');
 
+        require('./View/singlePost.php');
     }
 }

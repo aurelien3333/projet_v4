@@ -19,29 +19,22 @@
         <h1 class="header__logo__titre">Carnet de note <br/>d'un écrivain</h1>
     </div>
 
-    <?php
-
-    if (isset($_SESSION['pass']) AND isset($_SESSION['pseudo'])):
-        echo "<div class='header__menu'>";
-        echo "<a class='header__menu__item' href='./index.php?action=listPosts'>Billets</a>";
-        echo "<a class='header__menu__item' href='./index.php?action=admin'>Aller sur l'admin</a>";
-        echo "<a class='header__menu__item' href='./index.php?action=readPost'>Rediger un article</a>";
-        echo "<a class='header__menu__item' href='./index.php?action=removeConnexion'>Déconnexion</a>";
-        echo "</div>";
-
-    else:
-        echo "<div class='header__menu'>";
-        echo "<a class='header__menu__item' href='./index.php?action=listPosts'>Billets</a>";
-        echo "<a class='header__menu__item' href='./index.php?action=connexion'>Connexion</a>";
-        echo "</div>";
-    endif;
-
-
-    ?>
+    <?php if (isset($_SESSION['pass']) AND isset($_SESSION['pseudo'])): ?>
+        <div class='header__menu'>";
+            <a class='header__menu__item' href='./index.php?action=listPosts'>Billets</a>
+            <a class='header__menu__item' href='./index.php?action=admin'>Aller sur l'admin</a>
+            <a class='header__menu__item' href='./index.php?action=readPost'>Rediger un article</a>
+            <a class='header__menu__item' href='./index.php?action=removeConnexion'>Déconnexion</a>
+        </div>
+    <?php else: ?>
+        echo "
+        <div class='header__menu'>
+            <a class='header__menu__item' href='./index.php?action=listPosts'>Billets</a>
+            <a class='header__menu__item' href='./index.php?action=connexion'>Connexion</a>
+        </div>
+    <?php endif; ?>
 
 </div>
-
 <?= $content ?>
-
 </body>
 </html>

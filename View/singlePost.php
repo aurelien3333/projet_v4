@@ -6,13 +6,13 @@
 
     <div class="posts">
         <h3 class="home__posts__titre">
-            <?= $posts->getTitle(); ?>
-            <span class="home__posts__titre__date">le <?= $posts->getCreationDateFr(); ?></span>
+            <?= $post->getTitle(); ?>
+            <span class="home__posts__titre__date">le <?= $post->getCreationDateFr(); ?></span>
         </h3>
 
 
         <div class="home__contenu__posts">
-            <?= nl2br($posts->getContent());
+            <?= nl2br($post->getContent());
             ?>
         </div>
     </div>
@@ -22,7 +22,7 @@
             <h3 class="comment__add__title">Laisser un commentaire</h3>
             <p class="comment__add__text">Votre adreese de messagerie ne sera pas publiée. Les champs obligatoires sont
                 indiqués avec *</p>
-            <form action="index.php?action=addComment&amp;postId=<?= $posts->getId(); ?>" class="comment__add__form"
+            <form action="index.php?action=addComment&amp;postId=<?= $post->getId(); ?>" class="comment__add__form"
                   method="post">
                 <input type="text" id="author_comment" name="author_comment" placeholder="Nom *"
                        class="comment__add__form__pseudo">
@@ -33,7 +33,7 @@
                 <button type="submit" class="comment__add__form__button">Publier votre commentaire</button>
             </form>
         </div>
-        <h2 class=""><?= count($commentManager->getListByPostId($posts->getId())); ?> Commentaire</h2>
+        <h2 class=""><?= count($commentManager->getListByPostId($post->getId())); ?> Commentaire</h2>
         <?php for ($i = 0; $i < count($comments); $i++) : ?>
             <div class="comment__display">
                 <span class="comment__display__pseudo"><?= $comments[$i]->getAuthor(); ?></span>

@@ -37,17 +37,6 @@ class Comment
         }
     }
 
-
-    public function getTitlePost()
-    {
-        return $this->_title_post;
-    }
-
-    public function setTitlePost($title_post)
-    {
-        $this->_title_post = $title_post;
-    }
-
     public function getId()
     {
         return $this->_id;
@@ -97,6 +86,19 @@ class Comment
     {
         $this->_comment_date_fr = $comment_date_fr;
     }
+
+    public function getTitlePost()
+    {
+        return $this->_title_post;
+    }
+
+    public function setTitlePost($title_post)
+    {
+        $this->_title_post = $title_post;
+    }
+
+
+
 
 
 

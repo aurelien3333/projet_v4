@@ -38,10 +38,7 @@ class UserController
     }
 
     static function deleteConnexion (){
-
         session_destroy();
         header('Location: ./index.php');
-
     }
-
 }

@@ -13,12 +13,10 @@ class CommentController{
         ]);
         $commentManager = new CommentManager();
         $commentManager->add($comment);
-
         header('Location: ./index.php?action=singlePost&id=' .$postId);
     }
     static function removeComment($id)
     {
-
         $commentManger = new CommentManager();
         $comment = $commentManger->get($id);
         $commentManger->delete($comment);

@@ -1,6 +1,8 @@
 <?php
 
-class post
+//namespace Model;
+
+class Post
 {
     private $_id;
     private $_title;
@@ -8,10 +10,10 @@ class post
     private $_author;
     private $_creation_date_fr;
 
-public function __construct(array $donnees)
-{
-    $this->hydrate($donnees);
-}
+    public function __construct(array $donnees)
+    {
+        $this->hydrate($donnees);
+    }
 
     public function hydrate(array $donnees)
     {
@@ -32,14 +34,14 @@ public function __construct(array $donnees)
         }
     }
 
-    public function getCreationDateFr()
+    public function getId()
     {
-        return $this->_creation_date_fr;
+        return $this->_id;
     }
 
-    public function setCreationDateFr($creation_date_fr)
+    public function setId($id)
     {
-        $this->_creation_date_fr = $creation_date_fr;
+        $this->_id = $id;
     }
 
     public function getTitle()
@@ -72,14 +74,14 @@ public function __construct(array $donnees)
         $this->_author = $author;
     }
 
-    public function getId()
+    public function getCreationDateFr()
     {
-        return $this->_id;
+        return $this->_creation_date_fr;
     }
 
-    public function setId($id)
+    public function setCreationDateFr($creation_date_fr)
     {
-        $this->_id = $id;
+        $this->_creation_date_fr = $creation_date_fr;
     }
 
 

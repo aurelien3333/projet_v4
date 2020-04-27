@@ -37,9 +37,8 @@
             <td>Article</td>
             <td>Action</td>
         </tr>
-        <?php
 
-        for ($i = 0; $i < count($comments); $i++) {
+        <?php for ($i = 0; $i < count($comments); $i++) :
             ?>
             <tr class="tableau_comment_admin">
                 <td><?= $comments[$i]->getAuthor() ?></td>
@@ -50,9 +49,7 @@
                     <a href="./index.php?action=removeComment&amp;id=<?= $comments[$i]->getId() ?>" title="Effacer l'article"><i class="far fa-trash-alt tableau_article_admin__delete"></i></a>
                 </td>
             </tr>
-            <?php
-        }
-        ?>
+            <?php endfor; ?>
     </table>
 
 <?php $content = ob_get_clean(); ?>
