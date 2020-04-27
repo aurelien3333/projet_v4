@@ -34,11 +34,11 @@ class UserController
         $_SESSION['pass'] = $user[1];
         $_SESSION['pseudo'] = $user[0];
         echo 'Vous êtes connecté !';
-        header('Location: ./index.php?action=admin');
+        header('Location: /admin');
     }
 
     static function deleteConnexion (){
         session_destroy();
-        header('Location: ./index.php');
+        header('Location: /');
     }
 }

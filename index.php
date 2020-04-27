@@ -5,8 +5,7 @@ require_once('Controller/AdminController.php');
 require_once('Controller/CommentController.php');
 require_once('Controller/PostController.php');
 require_once('Controller/UserController.php');
-
-if (isset($_GET['action'])) {
+if (!empty($_GET['action'])) {
     //nettoyage $_GET
 
     if (isset($_GET['id']) && (int)$_GET['id'] > 0) {
@@ -73,6 +72,9 @@ if (isset($_GET['action'])) {
         if (!empty($_GET['postId']) && !empty($_POST['author_comment']) && !empty($_POST['content_comment'])) {
             CommentController::addComment($_GET['postId'], $_POST['author_comment'], $_POST['content_comment']);
         }
+        //Affiche la page home quand rien est entré dan l'urk
+    }elseif ($_GET['action'] === 'index.php') {
+        PostController::listPosts();
     }
     //affiche la list des article action par defaut
 } else {

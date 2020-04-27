@@ -15,22 +15,22 @@
 <body>
 <div class="header">
     <div class="header__logo">
-        <img src="./public/img/logo_blanc.png" alt="logo" class="header__logo__img">
+        <img src="/public/img/logo_blanc.png" alt="logo" class="header__logo__img">
         <h1 class="header__logo__titre">Carnet de note <br/>d'un écrivain</h1>
     </div>
 
     <?php if (isset($_SESSION['pass']) AND isset($_SESSION['pseudo'])): ?>
         <div class='header__menu'>";
-            <a class='header__menu__item' href='./index.php?action=listPosts'>Billets</a>
-            <a class='header__menu__item' href='./index.php?action=admin'>Aller sur l'admin</a>
-            <a class='header__menu__item' href='./index.php?action=readPost'>Rediger un article</a>
-            <a class='header__menu__item' href='./index.php?action=removeConnexion'>Déconnexion</a>
+            <a class='header__menu__item' href='/listPosts'>Billets</a>
+            <a class='header__menu__item' href='/admin'>Aller sur l'admin</a>
+            <a class='header__menu__item' href='/readPost'>Rediger un article</a>
+            <a class='header__menu__item' href='/removeConnexion'>Déconnexion</a>
         </div>
     <?php else: ?>
         echo "
         <div class='header__menu'>
-            <a class='header__menu__item' href='./index.php?action=listPosts'>Billets</a>
-            <a class='header__menu__item' href='./index.php?action=connexion'>Connexion</a>
+            <a class='header__menu__item' href='/listPosts'>Billets</a>
+            <a class='header__menu__item' href='/connexion'>Connexion</a>
         </div>
     <?php endif; ?>
 

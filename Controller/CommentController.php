@@ -13,7 +13,7 @@ class CommentController{
         ]);
         $commentManager = new CommentManager();
         $commentManager->add($comment);
-        header('Location: ./index.php?action=singlePost&id=' .$postId);
+        header('Location: /singlePost/' .$postId);
     }
     static function removeComment($id)
     {
@@ -21,6 +21,6 @@ class CommentController{
         $comment = $commentManger->get($id);
         $commentManger->delete($comment);
 
-        header('Location: ./index.php?action=admin');
+        header('Location: /admin');
     }
 }

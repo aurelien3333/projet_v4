@@ -14,7 +14,7 @@
             <p class="home__contenu__posts">
                 <?= strip_tags(substr($posts[$i]->getContent(), 0, 300)); ?>
                 <a class="home__contenu__posts__btn-lire-la-suite"
-                   href="./index.php?action=singlePost&amp;id=<?= $posts[$i]->getId() ?>">Lire la suite</a>
+                   href="./singlePost/<?= $posts[$i]->getId() ?>">Lire la suite</a>
             </p>
         </div>
     <?php endfor; ?>

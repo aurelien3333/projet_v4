@@ -32,7 +32,7 @@ class PostController
         $postManager = new PostManager();
         $postManager->add($post);
 
-        header('Location: ./index.php?action=admin');
+        header('Location: /admin');
     }
 
 
@@ -48,7 +48,7 @@ class PostController
             $commentManger->delete($comments[$i]);
         }
 
-        header('Location: ./index.php?action=admin');
+        header('Location: /admin');
     }
 
     static function modifiedPost($id)
@@ -70,7 +70,7 @@ class PostController
         $postManager = new PostManager();
         $postManager->update($post);
 
-        header('Location: ./index.php?action=admin');
+        header('Location: /admin');
     }
 
     static function listPosts()

@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 
 
-<form action="index.php?action=updatePost&amp;id=<?= $post->getId();?>" method="post">
+<form action="/updatePost/<?= $post->getId();?>" method="post">
     <label for="title_post">Titre</label>
     <br />
     <input type="text" id="title_post" name="title_post" value="<?= $post->getTitle();?>">

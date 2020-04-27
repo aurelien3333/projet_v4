@@ -4,7 +4,7 @@
 
 
 
-<form action="index.php?action=addPost" method="post">
+<form action="/addPost" method="post">
 
     <label for="title_post">Titre</label>
     <br />
