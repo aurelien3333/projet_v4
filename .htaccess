@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteRule ^article/([0-9]+)$ index.php?action=singlePost&id=$1
+RewriteRule ^article$ index.php?action=listPosts
