@@ -1,6 +1,4 @@
 <?php
-require_once('Manager.php');
-require_once('Post.php');
 
 //use Model\Post;
 

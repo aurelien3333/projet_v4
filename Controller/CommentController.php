@@ -1,8 +1,5 @@
 <?php
 
-require_once('./Model/Comment.php');
-require_once('./Model/CommentManager.php');
-
 class CommentController{
 
     static function addComment($postId, $author, $comment){

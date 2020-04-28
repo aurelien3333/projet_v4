@@ -1,12 +1,6 @@
 <?php
 //use Model\Post;
 
-
-require_once('./Model/PostManager.php');
-require_once('./Model/Post.php');
-require_once('./Model/Comment.php');
-require_once('./Model/CommentManager.php');
-
 class PostController
 {
     private $postManager;
@@ -16,7 +10,7 @@ class PostController
         $this->postManager = new PostManager();
     }
 
-    static function readPost()
+    public function readPost()
     {
         require('./View/readPost.php');
     }

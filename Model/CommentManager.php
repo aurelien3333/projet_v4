@@ -1,6 +1,5 @@
 <?php
-require_once('Manager.php');
-require_once('Comment.php');
+
 
 
 class CommentManager extends Manager

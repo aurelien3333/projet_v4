@@ -1,10 +1,18 @@
 <?php
 session_start();
 
-require_once('./Controller/AdminController.php');
-require_once('./Controller/CommentController.php');
-require_once('./Controller/PostController.php');
-require_once('./Controller/UserController.php');
+function LoadClass($classe)
+{
+    if (file_exists('./Controller/' . $classe . '.php')){
+        require './Controller/' . $classe . '.php';
+    } else {
+        require './Model/' . $classe . '.php';
+    }
+}
+spl_autoload_register('LoadClass');
+
+
+
 if (!empty($_GET['action'])) {
     //nettoyage $_GET
 
@@ -15,7 +23,8 @@ if (!empty($_GET['action'])) {
     if (isset($_SESSION['pass']) AND isset($_SESSION['pseudo'])) {
         //affiche la vue avec l'editeur de text pour ecrire un nouvel article
         if ($_GET['action'] === 'readPost') {
-            PostController::readPost();
+            $postController = new PostController();
+            $postController->readPost();
             //Supprime un commentaire par son id
         } elseif ($_GET['action'] === 'removeComment') {
             if (!empty($idClean)) {

@@ -127,6 +127,10 @@ table {
 
 /*page article seul*/
 
+.home__contenu__posts > p{
+   margin: 2px;
+}
+
 /* formulaire ajout commentaire */
 
 .comment__add {
