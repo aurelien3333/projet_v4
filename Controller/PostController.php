@@ -18,7 +18,7 @@ class PostController
 
     static function readPost()
     {
-        require('../View/readPost.php');
+        require('./View/readPost.php');
     }
 
     static function addPost($title, $content, $author)

@@ -72,9 +72,6 @@ if (!empty($_GET['action'])) {
         if (!empty($_GET['postId']) && !empty($_POST['author_comment']) && !empty($_POST['content_comment'])) {
             CommentController::addComment($_GET['postId'], $_POST['author_comment'], $_POST['content_comment']);
         }
-        //Affiche la page home quand rien est entré dan l'urk
-    }elseif ($_GET['action'] === 'index.php') {
-        PostController::listPosts();
     }
     //affiche la list des article action par defaut
 } else {

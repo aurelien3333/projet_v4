@@ -2,9 +2,16 @@ RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-F
 RewriteCond %{REQUEST_FILENAME} !-D
 
+RewriteRule ^listPosts$ index.php?action=listPosts [QSA,L]
+RewriteRule ^singlePost/([0-9]+)$ index.php?action=singlePost&id=$1 [QSA,L]
+RewriteRule ^addComment/([0-9]+)$ index.php?action=addComment&postId=$1 [QSA,L]
+RewriteRule ^removePost/([0-9]+)$ index.php?action=removePost&id=$1 [QSA,L]
+RewriteRule ^modifiedPost/([0-9]+)$ index.php?action=modifiedPost&id=$1 [QSA,L]
+RewriteRule ^updatePost/([0-9]+)$ index.php?action=updatePost&id=$1 [QSA,L]
+RewriteRule ^removeComment/([0-9]+)$ index.php?action=removeComment&id=$1 [QSA,L]
+RewriteRule ^connexion$ index.php?action=connexion [QSA,L]
+RewriteRule ^newConnexion$ index.php?action=newConnexion [QSA,L]
+RewriteRule ^admin index.php?action=admin [QSA,L]
+RewriteRule ^readPost index.php?action=readPost [QSA,L]
+RewriteRule ^removeConnexion index.php?action=removeConnexion [QSA,L]
 
-RewriteRule ^(article)$ index.php?action=listPost [QSA,L]
-
-
-RewriteRule ^(.+)/([0-9]+)$ index.php?action=$1&id=$2 [QSA,L]
-RewriteRule ^(.+)$ index.php?action=$1 [QSA,L]
