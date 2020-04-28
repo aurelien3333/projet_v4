@@ -15,7 +15,7 @@ class PostController
         require('./View/readPost.php');
     }
 
-    static function addPost($title, $content, $author)
+    public function addPost($title, $content, $author)
     {
         $post = new Post([
             'title' => $title,
@@ -30,7 +30,7 @@ class PostController
     }
 
 
-    static function removePost($id)
+    public function removePost($id)
     {
         $postManager = new PostManager();
         $post = $postManager->get($id);
@@ -45,7 +45,7 @@ class PostController
         header('Location: /admin');
     }
 
-    static function modifiedPost($id)
+    public function modifiedPost($id)
     {
         $postManager = new PostManager();
         $post = $postManager->get($id);
@@ -53,7 +53,7 @@ class PostController
 
     }
 
-    static function updatePost($title, $content, $author, $id)
+    public function updatePost($title, $content, $author, $id)
     {
         $post = new Post([
             'title' => $title,
@@ -67,7 +67,7 @@ class PostController
         header('Location: /admin');
     }
 
-    static function listPosts()
+    public function listPosts()
     {
         $postManager = new PostManager();
         $posts = $postManager->getList();
@@ -75,7 +75,7 @@ class PostController
         require('./View/home.php');
     }
 
-    static function getPost($id)
+    public function getPost($id)
     {
         $postManager = new PostManager();
         $post = $postManager->get($id);

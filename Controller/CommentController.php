@@ -2,7 +2,7 @@
 
 class CommentController{
 
-    static function addComment($postId, $author, $comment){
+    public function addComment($postId, $author, $comment){
         $comment = new Comment([
             'post_id' => $postId,
             'comment' => $comment,
@@ -12,7 +12,7 @@ class CommentController{
         $commentManager->add($comment);
         header('Location: /singlePost/' .$postId);
     }
-    static function removeComment($id)
+    public function removeComment($id)
     {
         $commentManger = new CommentManager();
         $comment = $commentManger->get($id);

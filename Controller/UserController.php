@@ -3,7 +3,7 @@
 class UserController
 {
 
-    static function connexion()
+    public function connexion()
     {
         require('./View/connexion.php');
     }
@@ -36,7 +36,7 @@ class UserController
         header('Location: /admin');
     }
 
-    static function deleteConnexion (){
+    public function deleteConnexion (){
         session_destroy();
         header('Location: /');
     }
