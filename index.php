@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-require_once('Controller/AdminController.php');
-require_once('Controller/CommentController.php');
-require_once('Controller/PostController.php');
-require_once('Controller/UserController.php');
+require_once('./Controller/AdminController.php');
+require_once('./Controller/CommentController.php');
+require_once('./Controller/PostController.php');
+require_once('./Controller/UserController.php');
 if (!empty($_GET['action'])) {
     //nettoyage $_GET
 

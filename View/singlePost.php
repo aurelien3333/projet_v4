@@ -32,7 +32,7 @@
                 <button type="submit" class="comment__add__form__button">Publier votre commentaire</button>
             </form>
         </div>
-        <h2 class=""><?= count($commentManager->getListByPostId($post->getId())); ?> Commentaire</h2>
+        <h2 class=""><?= count($comments); ?> Commentaire</h2>
         <?php for ($i = 0; $i < count($comments); $i++) : ?>
             <div class="comment__display">
                 <span class="comment__display__pseudo"><?= $comments[$i]->getAuthor(); ?></span>

@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8"/>
     <title>Mon blog</title>
-    <link href="../public/css/style.css" rel="stylesheet"/>
-    <link href="../public/css/reset.css" rel="stylesheet"/>
+    <base href="http://localhost/" />
+    <link href="public/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="public/css/reset.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Josefin+Slab&display=swap"
           rel="stylesheet">
     <script src="https://kit.fontawesome.com/5fe9b3ed11.js" crossorigin="anonymous"></script>

@@ -1,4 +1,10 @@
-RewriteEngine On
+RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-F
+RewriteCond %{REQUEST_FILENAME} !-D
+
+
+RewriteRule ^(article)$ index.php?action=listPost [QSA,L]
+
+
 RewriteRule ^(.+)/([0-9]+)$ index.php?action=$1&id=$2 [QSA,L]
 RewriteRule ^(.+)$ index.php?action=$1 [QSA,L]
