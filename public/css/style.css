@@ -1,6 +1,9 @@
 *{
     box-sizing: border-box;
 }
+body{
+    background: url("/public/img/fond.jpg") repeat;
+}
 
 /*Tableau de l'interface admin */
 .tableau_article_admin {
@@ -41,38 +44,44 @@ table {
 
 /*header blog*/
 .header {
-    padding-left: 20px;
-    background-color: black;
-    height: 120px;
+    height: 700px;
+}
+.header__img{
+    position: relative;
+}
+.header__navbar{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
 }
-
-.header__logo {
+.header__navbar__logo {
     display: flex;
     flex-direction: row;
-}
+    padding: 10px;
 
-.header__logo__titre {
+}
+.header__navbar__logo__titre {
     color: white;
     margin: 0;
     padding-left: 10px;
     font-family: 'Dancing Script', cursive;
     font-size: 38px;
 }
-
-.header__logo__img {
-    height: 90px;
+.header__navbar__logo__img {
+    height: 80px;
     width: auto;
 }
-
-.header__menu {
+.header__navbar__menu {
     padding-right: 20px;
+    align-self: center;
 }
-
-.header__menu__item {
+.header__navbar__menu__item {
     text-decoration: none;
     color: white;
     margin-right: 25px;
@@ -126,8 +135,36 @@ table {
 }
 
 /*page article seul*/
+.post{
+    width: 960px;
+    margin: auto;
 
-.home__contenu__posts > p{
+    background-color: white;
+    box-shadow: 8px 8px 12px #aaa;
+    border-radius: 15px 0 0 0;
+}
+.post__header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 50px 0 0 0 ;
+}
+.post__header__titre{
+    color: #990000;
+    margin: 20px;
+    font-size: 22px;
+}
+.post__header__date{
+    padding: 10px;
+    font-style: italic;
+}
+.post__contenu{
+    padding: 10px 20px 10px 20px;
+    margin-bottom: 10px;
+
+}
+.post__contenu > p{
    margin: 2px;
 }
 
@@ -138,12 +175,14 @@ table {
     flex-direction: column;
     width: 960px;
     margin: auto;
-    border: dashed 1px #0089ec;
     padding: 20px;
+    background-color: white;
+    box-shadow: 8px 8px 12px #aaa;
+    border-radius: 15px 0 0 0;
 }
 .comment__add__title {
     margin: 0;
-    color: #0089ec;
+    color: #990000;
     font-size: 1.5em;
 }
 .comment__add__text {
@@ -166,7 +205,7 @@ table {
     height: 150px;
 }
 .comment__add__form__button {
-    background-color: #0089ec;
+    background-color: #990000;
     margin: 20px auto 10px auto;
     padding: 10px;
     color: white;

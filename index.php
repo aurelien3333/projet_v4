@@ -9,7 +9,6 @@ function LoadClass($classe)
         require './Model/' . $classe . '.php';
     }
 }
-
 spl_autoload_register('LoadClass');
 
 $postController = new PostController();
@@ -26,7 +25,6 @@ if (!empty($_GET['action'])) {
         //affiche la vue avec l'editeur de text pour ecrire un nouvel article
         $adminController = new AdminController();
         if ($_GET['action'] === 'readPost') {
-
             $postController->readPost();
             //Supprime un commentaire par son id
         } elseif ($_GET['action'] === 'removeComment') {
@@ -76,9 +74,7 @@ if (!empty($_GET['action'])) {
         $userController->connexion();
         //affiche un article par son id
     } elseif ($_GET['action'] === 'singlePost' && isset($idClean)) {
-
         $postController->getPost($idClean);
-
         //ajoute un commentaire avec l'id de l'article et en récupérant les info du post(author, contenu)
     } elseif ($_GET['action'] === 'addComment') {
         if (!empty($_GET['postId']) && !empty($_POST['author_comment']) && !empty($_POST['content_comment'])) {
