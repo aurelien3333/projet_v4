@@ -72,7 +72,7 @@ class PostController
         $postManager = new PostManager();
         $posts = $postManager->getList();
 
-        require('./View/home.php');
+        require('./View/listPost.php');
     }
 
     public function getPost($id)

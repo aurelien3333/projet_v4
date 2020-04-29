@@ -3,9 +3,9 @@
 
 <div class="connexion">
     <form action="/newConnexion" class="connexion__form" method="post">
-        <input type="text" placeholder="pseudo" name="user_pseudo">
-        <input type="password" placeholder="Mots de passe" name="user_pwd">
-        <button type="submit">Connexion</button>
+        <input type="text" placeholder="pseudo" name="user_pseudo" class="connexion__form__pseudo">
+        <input type="password" placeholder="Mots de passe" name="user_pwd" class="connexion__form__pass">
+        <button type="submit" class="connexion__form__bouton">Connexion</button>
     </form>
 </div>
 
