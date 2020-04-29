@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<div class="home">
+<div class="home ">
     <h2 class="home__titre">Derniers chapitres publiés</h2>
 
 
@@ -18,7 +18,7 @@
             </p>
         </div>
     <?php endfor; ?>
-
+</div>
     <?php $content = ob_get_clean(); ?>
     <?php require('template.php'); ?>
-</div>
+

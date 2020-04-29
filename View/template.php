@@ -13,30 +13,64 @@
             referrerpolicy="origin"></script>
 </head>
 <body>
-<div class="header">
-    <div class="header__navbar">
-        <div class="header__navbar__logo">
-            <img src="/public/img/logo_blanc.png" alt="logo" class="header__navbar__logo__img">
-            <h1 class="header__navbar__logo__titre">Carnet de note de <br/>Jean Forteroche</h1>
+<div class="main">
+    <div class="header">
+        <div class="header__logo">
+            <img src="/public/img/logo_blanc.png" alt="logo" class="header__logo__img">
+            <h1 class="header__logo__titre">Carnet de note de <br/>Jean Forteroche</h1>
         </div>
         <?php if (isset($_SESSION['pass']) AND isset($_SESSION['pseudo'])): ?>
-            <div class='header__navbar__menu'>";
-                <a class='header__navbar__menu__item' href='/listPosts'>Billets</a>
-                <a class='header__navbar__menu__item' href='/admin'>Aller sur l'admin</a>
-                <a class='header__navbar__menu__item' href='/readPost'>Rediger un article</a>
-                <a class='header__navbar__menu__item' href='/removeConnexion'>Déconnexion</a>
+            <div class='header__menu'>";
+                <a class='header__menu__item' href='/listPosts'>Chapitres</a>
+                <a class='header__menu__item' href='/admin'>Aller sur l'admin</a>
+                <a class='header__menu__item' href='/readPost'>Rediger un article</a>
+                <a class='header__menu__item' href='/removeConnexion'>Déconnexion</a>
             </div>
         <?php else: ?>
-            <div class='header__navbar__menu'>
-                <a class='header__navbar__menu__item' href='/listPosts'>Billets</a>
-                <a class='header__navbar__menu__item' href='/connexion'>Connexion</a>
+            <div class='header__menu'>
+                <a class='header__menu__item' href='/listPosts'>Chapitres</a>
             </div>
         <?php endif; ?>
     </div>
+
+    <?= $content ?>
+
+    <div class="footer">
+        <div class="footer__content">
+            <div class="footer__content__plan">
+                <h3 class="footer__content__titre">Plan du site</h3>
+                <div class="footer__content__menu">
+                    <a class="footer__content__menu__items">Accueil</a>
+                    <a class="footer__content__menu__items">Biographie</a>
+                    <a class="footer__content__menu__items">Chapitres</a>
+                    <a class="footer__content__menu__items">Contact</a>
+                </div>
+            </div>
+            <div class="footer__content__social">
+                <h3 class="footer__content__titre">Mes réseaux</h3>
+                <div class="footer__content__menu">
+                    <a class="footer__content__menu__items">Facebook</a>
+                    <a class="footer__content__menu__items">Twitter</a>
+                    <a class="footer__content__menu__items">Instagram</a>
+                </div>
+            </div>
+            <div class="footer__content_admin">
+                <h3 class="footer__content__titre">Admin</h3>
+                <div class="footer__content__menu">
+                    <?php if (isset($_SESSION['pass']) AND isset($_SESSION['pseudo'])): ?>
+                        <a class='footer__content__menu__items' href='/removeConnexion'>Déconnexion</a>
+                    <?php else: ?>
+                        <a class="footer__content__menu__items" href='/connexion'>Connexion</a>
+                    <?php endif; ?>
+                </div>
+            </div>
+
+        </div>
+        <p class="footer__copyright">
+            Copyright © Aurélien Verdeau - 2019. Tous droits réservés
+        </p>
+    </div>
 </div>
-<div class="footer">
-rtrtretysssssttyty
-</div>
-<?= $content ?>
 </body>
+
 </html>
