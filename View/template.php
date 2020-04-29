@@ -14,7 +14,6 @@
 </head>
 <body>
 <div class="header">
-    <img src="/public/img/background.png" alt="montagne" class="header__img">
     <div class="header__navbar">
         <div class="header__navbar__logo">
             <img src="/public/img/logo_blanc.png" alt="logo" class="header__navbar__logo__img">
@@ -28,13 +27,15 @@
                 <a class='header__navbar__menu__item' href='/removeConnexion'>Déconnexion</a>
             </div>
         <?php else: ?>
-            echo "
             <div class='header__navbar__menu'>
                 <a class='header__navbar__menu__item' href='/listPosts'>Billets</a>
                 <a class='header__navbar__menu__item' href='/connexion'>Connexion</a>
             </div>
         <?php endif; ?>
     </div>
+</div>
+<div class="footer">
+rtrtretysssssttyty
 </div>
 <?= $content ?>
 </body>
