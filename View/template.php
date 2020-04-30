@@ -17,20 +17,19 @@
     <div class="header">
         <div class="header__logo">
             <img src="/public/img/logo_blanc.png" alt="logo" class="header__logo__img">
-            <h1 class="header__logo__titre">Carnet de note de <br/>Jean Forteroche</h1>
+            <h1 class="header__logo__titre">Billet simple<br/>pour l'Alaska</h1>
         </div>
-        <?php if (isset($_SESSION['pass']) AND isset($_SESSION['pseudo'])): ?>
-            <div class='header__menu'>";
-                <a class='header__menu__item' href='/listPosts'>Chapitres</a>
+        <div class='header__menu'>";
+            <a class='header__menu__item' href='/home'>Accueill</a>
+            <a class='header__menu__item' href='/listPosts'>Chapitres</a>
+            <a class='header__menu__item' href='/biographie'>Biographie</a>
+            <?php if (isset($_SESSION['pass']) AND isset($_SESSION['pseudo'])): ?>
                 <a class='header__menu__item' href='/admin'>Aller sur l'admin</a>
                 <a class='header__menu__item' href='/readPost'>Rediger un article</a>
                 <a class='header__menu__item' href='/removeConnexion'>Déconnexion</a>
-            </div>
-        <?php else: ?>
-            <div class='header__menu'>
-                <a class='header__menu__item' href='/listPosts'>Chapitres</a>
-            </div>
-        <?php endif; ?>
+            <?php endif; ?>
+        </div>
+
     </div>
 
     <?= $content ?>

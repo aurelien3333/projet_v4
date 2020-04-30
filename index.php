@@ -9,6 +9,7 @@ function LoadClass($classe)
         require './Model/' . $classe . '.php';
     }
 }
+
 spl_autoload_register('LoadClass');
 
 $postController = new PostController();
@@ -80,8 +81,14 @@ if (!empty($_GET['action'])) {
         if (!empty($_GET['postId']) && !empty($_POST['author_comment']) && !empty($_POST['content_comment'])) {
             $commentController->addComment($_GET['postId'], $_POST['author_comment'], $_POST['content_comment']);
         }
+        //Affiche la page home
+    } elseif ($_GET['action'] === 'home') {
+        require('./View/home.php');
+        //Afiche la page biographie
+    }elseif ($_GET['action'] === 'biographie') {
+        require('./View/biographie.php');
     }
     //affiche la list des article action par defaut
 } else {
-    $postController->listPosts();
+    require('./View/home.php');
 }

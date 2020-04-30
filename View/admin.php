@@ -8,7 +8,7 @@
                 <td>Aperçu</td>
                 <td>Auteur</td>
                 <td>Comentaire</td>
-                <td>Gestion article</td>
+                <td>Action</td>
             </tr>
 
 

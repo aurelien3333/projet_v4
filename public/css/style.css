@@ -16,6 +16,81 @@ html, body {
     padding-bottom: 230px;
     font-family: "DejaVu Sans", Arial, sans-serif;
 }
+
+/*Page home*/
+.home {
+    width: 960px;
+    margin: 50px auto auto auto;
+    background-color: rgba(150,150,150,0.8);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+}
+.home__titre {
+    color: white;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 2em;
+    padding-top: 30px;
+}
+
+.home__img {
+    padding-right: 10px;
+    width: 200px;
+    height: auto;
+    text-align: center;
+    margin-left: 10px;
+    border-radius: 10%;
+    float: left;
+}
+.home__text {
+    color: white;
+    padding: 20px 20px 0 20px;
+    text-align: justify;
+    font-size: 22px;
+
+}
+.home__boutons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.home__bouton{
+    text-decoration: none;
+    padding: 15px;
+    color: white;
+    background-color: #990000;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+/*page biographie*/
+.biographie{
+    width: 960px;
+    margin: auto;
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 16px;
+    color: black;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+.biographie__titre{
+
+    text-decoration: underline;
+    font-size: 2em;
+
+    text-align: center;
+}
+
+.biographie__text{
+    text-align: justify;
+    font-size: 22px;
+
+
+}
+
+
 /* page ecrire un article */
 #mce {
     width: 80%;
@@ -32,7 +107,7 @@ html, body {
     font-size: 32px;
     text-decoration: underline;
     color: white;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .admin__tableau {
@@ -50,7 +125,6 @@ html, body {
     font-weight: bold;
 }
 
-
 td, th {
     padding: 10px 20px;
     border: 1px solid black;
@@ -61,6 +135,7 @@ table {
     border-spacing: 0;
     width: 100%;
 }
+
 /*header blog*/
 .header {
     background-color: rgba(0, 0, 0, 0.5);
@@ -124,7 +199,7 @@ table {
     text-decoration: underline;
     color: white;
     width: 960px;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 15px;
 }
 
@@ -292,18 +367,20 @@ table {
 .connexion {
     width: 400px;
     height: auto;
-    background-color: rgba(0, 0, 0,0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 15px;
     margin: 150px auto auto auto;
     padding-bottom: 15px;
 
 }
+
 .connexion__titre {
     text-align: center;
     padding-top: 20px;
     font-size: 1.8em;
     color: white;
 }
+
 .connexion__form {
     display: flex;
     flex-direction: column;

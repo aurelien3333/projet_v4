@@ -15,4 +15,6 @@ RewriteRule ^admin$ index.php?action=admin [QSA,L]
 RewriteRule ^readPost$ index.php?action=readPost [QSA,L]
 RewriteRule ^addPost$ index.php?action=addPost [QSA,L]
 RewriteRule ^removeConnexion$ index.php?action=removeConnexion [QSA,L]
+RewriteRule ^home$ index.php?action=home [QSA,L]
+RewriteRule ^biographie$ index.php?action=biographie [QSA,L]
 
