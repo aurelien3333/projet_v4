@@ -42,7 +42,6 @@
                     <a class="footer__content__menu__items">Accueil</a>
                     <a class="footer__content__menu__items">Biographie</a>
                     <a class="footer__content__menu__items">Chapitres</a>
-                    <a class="footer__content__menu__items">Contact</a>
                 </div>
             </div>
             <div class="footer__content__social">
@@ -57,6 +56,8 @@
                 <h3 class="footer__content__titre">Admin</h3>
                 <div class="footer__content__menu">
                     <?php if (isset($_SESSION['pass']) AND isset($_SESSION['pseudo'])): ?>
+                        <a class='footer__content__menu__items' href='/admin'>Aller sur l'admin</a>
+                        <a class='footer__content__menu__items' href='/readPost'>Rediger un article</a>
                         <a class='footer__content__menu__items' href='/removeConnexion'>Déconnexion</a>
                     <?php else: ?>
                         <a class="footer__content__menu__items" href='/connexion'>Connexion</a>
