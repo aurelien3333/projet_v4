@@ -30,6 +30,10 @@ class PostManager extends Manager
 
     public function add(Post $post)
     {
+        ;
+        var_dump($this->createSlug($post));
+        die;
+
         $db = $this->dbConnect();
         $req = $db->prepare('INSERT INTO posts(author, title, content, creation_date) VALUES(:author, :title, :content, :creation_date)');
 
@@ -60,6 +64,30 @@ class PostManager extends Manager
     {
         $db = $this->dbConnect();
         $db->exec('DELETE FROM posts WHERE id = ' . $post->getId());
+
+    }
+
+    private function createSlug(Post $post)
+    {
+
+
+        $bad = array(
+            'à', 'á', 'â', 'ã', 'ä', 'ç', 'è', 'é', 'ê', 'ë', 'ì', 'í',
+            'î', 'ï', 'ñ', 'ò', 'ó', 'ô', 'õ', 'ö', 'ù', 'ú', 'û', 'ü',
+            'ý', 'ÿ', ':', ';', '.', '\,', "\'", '\"', '/', '!', '?', '^'
+        );
+        $good = array(
+            'a', 'a', 'a', 'a', 'a', 'c', 'e', 'e', 'e', 'e', 'i', 'i',
+            'i', 'i', 'n', 'o', 'o', 'o', 'o', 'o', 'u', 'u', 'u', 'u',
+            'y', 'y', '', '', '', '', '', '', '', '', '', ''
+        );
+
+        $title = $post->getTitle();
+        $title = mb_strtolower($title, "UTF-8");
+        $title = str_replace(' ', '-', $title);
+        $title = str_replace($bad, $good, $title);
+
+        return $title;
 
     }
 }
