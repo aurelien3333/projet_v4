@@ -7,7 +7,7 @@
     <?php for ($i = 0; $i < count($posts); $i++) : ?>
         <div class="list-post__posts">
             <a class="list-post__posts__link" href="./singlePost/<?= $posts[$i]->getId() ?>"><h3 class="list-post__posts__titre">
-                <?= $posts[$i]->getTitle(); ?>
+                <?= $posts[$i]->gettitle(); ?>
             </h3></a>
             <div class="list-post__posts__titre__date">le <?= $posts[$i]->getCreationDateFr(); ?></div>
             <p class="list-post__contenu__posts">

@@ -9,6 +9,7 @@ class Post
     private $_content;
     private $_author;
     private $_creation_date_fr;
+    private $_slug;
 
     public function __construct(array $donnees)
     {
@@ -29,9 +30,24 @@ class Post
         if (isset($donnees['author'])) {
             $this->setAuthor($donnees['author']);
         }
+        if (isset($donnees['slug'])) {
+            $this->setSlug($donnees['slug']);
+        }
         if (isset($donnees['creation_date_fr'])) {
             $this->setCreationDateFr($donnees['creation_date_fr']);
         }
+
+    }
+
+
+    public function getSlug()
+    {
+        return $this->_slug;
+    }
+
+    public function setSlug($slug): void
+    {
+        $this->_slug = $slug;
     }
 
     public function getId()
