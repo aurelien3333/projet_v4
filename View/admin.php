@@ -32,6 +32,8 @@
         </table>
     </div>
     <h2 class="admin__titre">Gestion des commentaires</h2>
+    <p class="admin__text">Les commentaires affichés en rouge ont été signalés par un utilisateur.</p>
+
     <div class="admin__tableau">
         <table>
             <tr class="admin__tableau__header">
@@ -42,18 +44,31 @@
                 <td>Action</td>
             </tr>
 
-            <?php for ($i = 0; $i < count($comments); $i++) :
-                ?>
-                <tr class="admin__tableau__core">
-                    <td><?= $comments[$i]->getAuthor() ?></td>
-                    <td><?= $comments[$i]->getCommentDateFr() ?></td>
-                    <td><?= $comments[$i]->getComment() ?></td>
-                    <td><?= $comments[$i]->getTitlePost(); ?></td>
-                    <td>
-                        <a href="/removeComment/<?= $comments[$i]->getId() ?>" title="Effacer l'article"><i
-                                    class="far fa-trash-alt tableau_article_admin__delete"></i></a>
-                    </td>
-                </tr>
+            <?php for ($i = 0; $i < count($comments); $i++) : ?>
+                <?php if ($comments[$i]->getReport() === 'oui') : ?>
+
+                    <tr class="admin__tableau__core">
+                        <td class="report"><?= $comments[$i]->getAuthor() ?></td>
+                        <td class="report"><?= $comments[$i]->getCommentDateFr() ?></td>
+                        <td class="report"><?= $comments[$i]->getComment() ?></td>
+                        <td class="report"><?= $comments[$i]->getTitlePost(); ?></td>
+                        <td>
+                            <a href="/removeComment/<?= $comments[$i]->getId() ?>" title="Effacer l'article">
+                                <i class="far fa-trash-alt tableau_article_admin__delete"></i></a>
+                        </td>
+                    </tr>
+                <?php else : ?>
+                    <tr class="admin__tableau__core">
+                        <td><?= $comments[$i]->getAuthor() ?></td>
+                        <td><?= $comments[$i]->getCommentDateFr() ?></td>
+                        <td><?= $comments[$i]->getComment() ?></td>
+                        <td><?= $comments[$i]->getTitlePost(); ?></td>
+                        <td>
+                            <a href="/removeComment/<?= $comments[$i]->getId() ?>" title="Effacer l'article">
+                                <i class="far fa-trash-alt tableau_article_admin__delete"></i></a>
+                        </td>
+                    </tr>
+                <?php endif ?>
             <?php endfor; ?>
         </table>
     </div>

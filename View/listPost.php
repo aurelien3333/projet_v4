@@ -6,9 +6,9 @@
 
     <?php for ($i = 0; $i < count($posts); $i++) : ?>
         <div class="list-post__posts">
-            <h3 class="list-post__posts__titre">
+            <a class="list-post__posts__link" href="./singlePost/<?= $posts[$i]->getId() ?>"><h3 class="list-post__posts__titre">
                 <?= $posts[$i]->getTitle(); ?>
-            </h3>
+            </h3></a>
             <div class="list-post__posts__titre__date">le <?= $posts[$i]->getCreationDateFr(); ?></div>
             <p class="list-post__contenu__posts">
                 <?= strip_tags(substr($posts[$i]->getContent(), 0, 400)); ?>

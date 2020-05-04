@@ -8,6 +8,7 @@ class Comment
     private $_author;
     private $_comment_date_fr;
     private $_title_post;
+    private $_report;
 
 
     public function __construct(array $donnees)
@@ -32,6 +33,9 @@ class Comment
         if (isset($donnees['comment_date_fr'])) {
             $this->setCommentDateFr($donnees['comment_date_fr']);
         }
+        if (isset($donnees['report'])) {
+            $this->setReport($donnees['report']);
+        }
         if (isset($donnees['title_post'])) {
             $this->setTitlePost($donnees['title_post']);
         }
@@ -42,6 +46,11 @@ class Comment
         return $this->_id;
     }
 
+    public function getReport()
+    {
+        return $this->_report;
+    }
+
     public function setId($id)
     {
         $this->_id = $id;
@@ -50,6 +59,11 @@ class Comment
     public function getPostId()
     {
         return $this->_post_id;
+    }
+
+    public function setReport($report)
+    {
+        $this->_report = $report;
     }
 
     public function setPostId($post_id)

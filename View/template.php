@@ -1,8 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:og="http://ogp.me/ns#">
 <head>
-    <meta charset="utf-8"/>
-    <title>Mon blog</title>
+    <!--  Meta   -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="Jean Forteroche" content="Site officiel de Jean Forteroche"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="robots" content="all"/>
+    <title>Jean Forteroche</title>
+    <!--  Balises Open graph pour Facebook  -->
+    <meta property="og:url" content="http://localhost/"/>
+    <meta property="og:title" content="Site officiel de Jean Forteroche"/>
+    <meta property="og:description" content="Retrouvez toute l'actualité de Jean Forteroche"/>
+    <meta property="og:image" content="http://localhost/public/img/jean_forteroche.jpg"/>
+    <!--  Balises Twiter Card pour Twitter  -->
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Site officiel de Jean Forteroche">
+    <meta name="twitter:url" content="http://www.localhost">
+    <meta name="twitter:description" content="Retrouvez toute l'actualité de Jean Forteroche">
+    <meta name="twitter:image" content="http://localhost/public/img/jean_forteroche.jpg">
+    <!-- Balises css, js, fontawesome, tiniyMCE et google font    -->
     <base href="http://localhost/"/>
     <link href="public/css/style.css" rel="stylesheet" type="text/css"/>
     <link href="public/css/reset.css" rel="stylesheet" type="text/css"/>
@@ -29,7 +45,6 @@
                 <a class='header__menu__item' href='/removeConnexion'>Déconnexion</a>
             <?php endif; ?>
         </div>
-
     </div>
 
     <?= $content ?>

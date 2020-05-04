@@ -35,11 +35,10 @@ html, body {
 }
 
 .home__img {
-    padding-right: 10px;
     width: 200px;
     height: auto;
     text-align: center;
-    margin-left: 10px;
+    margin: 0 10px;
     border-radius: 10%;
     float: left;
 }
@@ -115,6 +114,20 @@ html, body {
 
 }
 
+.report {
+    color: red;
+    /*font-weight: bold;*/
+}
+.admin__text{
+    text-align: center;
+    color: white;
+    background-color: rgba(0,0,0,0.6);
+    width: 35%;
+    margin: 0 auto 10px auto;
+    padding: 10px;
+
+}
+
 .admin__tableau__core {
     background-color: white;
 }
@@ -187,7 +200,10 @@ table {
 .list-post {
     margin-top: 50px;
     padding: 20px;
-
+}
+.list-post__posts__link {
+    text-decoration: none;
+    color: #990000;
 }
 
 .list-post__titre {
@@ -360,6 +376,18 @@ table {
 .comment__display__tr {
     margin: 15px 0;
     background-color: gray;
+}
+
+.comment__display__btn-report {
+    background: #990000;
+    color: white;
+    width: 25%;
+    margin: 15px auto;
+    padding: 8px;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    border-radius: 8px;
 }
 
 /*Page de connexion*/

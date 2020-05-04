@@ -27,9 +27,16 @@
         <div class="comment__display__pseudo"><?= $comments[$i]->getAuthor(); ?></div>
         <div class="comment__display__date">le <?= $comments[$i]->getCommentDateFr(); ?></div>
         <div class="comment__display__comment"><?= $comments[$i]->getComment(); ?></div>
+        <?php if ($comments[$i]->getReport() === 'non') : ?>
+            <a class="comment__display__btn-report" href="/reportComment/<?= $comments[$i]->getId(); ?>/<?= $comments[$i]->getPostId(); ?>" >Signaler ce commentaire</a>
+        <?php else: ?>
+            <div class="comment__display__btn-report">Commentaire signalé</div>
+        <?php endif; ?>
+
         <hr class="comment__display__tr">
     <?php endfor; ?>
 </div>
+
 <div class="comment__add box">
     <h3 class="comment__add__title">Laisser un commentaire</h3>
     <p class="comment__add__text">Les champs obligatoires sont indiqués avec *</p>
