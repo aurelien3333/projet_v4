@@ -33,13 +33,14 @@ class PostManager extends Manager
         $slug = $this->createSlug($post);
 
         $db = $this->dbConnect();
-        $req = $db->prepare('INSERT INTO posts(author, title, content, slug, creation_date) VALUES(:author, :title, :content, :creation_date, :slug)');
+        $req = $db->prepare('INSERT INTO posts(author, title, content, slug, creation_date) VALUES(:author, :title, :content, :slug, :creation_date)');
 
         $req->bindValue(':author', $post->getAuthor(), PDO::PARAM_STR);
         $req->bindValue(':title', $post->getTitle(), PDO::PARAM_STR);
         $req->bindValue(':content', $post->getContent(), PDO::PARAM_STR);
-        $req->bindValue(':creation_date', date('Y-m-d H:i:s'), PDO::PARAM_STR);
         $req->bindValue(':slug', $slug, PDO::PARAM_STR);
+        $req->bindValue(':creation_date', date('Y-m-d H:i:s'), PDO::PARAM_STR);
+
 
         $req->execute();
     }
