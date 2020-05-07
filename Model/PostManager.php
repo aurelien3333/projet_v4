@@ -18,7 +18,7 @@ class PostManager extends Manager
         return $posts;
     }
 
-    public function get($id)
+    public function getById($id)
     {
         $id = (int)$id;
         $db = $this->dbConnect();
@@ -76,12 +76,12 @@ class PostManager extends Manager
         $bad = array(
             'à', 'á', 'â', 'ã', 'ä', 'ç', 'è', 'é', 'ê', 'ë', 'ì', 'í',
             'î', 'ï', 'ñ', 'ò', 'ó', 'ô', 'õ', 'ö', 'ù', 'ú', 'û', 'ü',
-            'ý', 'ÿ', ':', ';', '.', '\,', "\'", '\"', '/', '!', '?', '^'
+            'ý', 'ÿ', ':', ';', '.', '\,', "\'", '\"', '/', '!', '?', '^', '$'
         );
         $good = array(
             'a', 'a', 'a', 'a', 'a', 'c', 'e', 'e', 'e', 'e', 'i', 'i',
             'i', 'i', 'n', 'o', 'o', 'o', 'o', 'o', 'u', 'u', 'u', 'u',
-            'y', 'y', '', '', '', '', '', '', '', '', '', ''
+            'y', 'y', '', '', '', '', '', '', '', '', '', '', ''
         );
 
         $title = $post->getTitle();

@@ -9,7 +9,7 @@
     </p>
     <div class="home__boutons">
         <a class="home__bouton" href="">Ma biographie</a>
-        <a class="home__bouton" href="/listPosts">Lire un chapitre</a>
+        <a class="home__bouton" href="/articles">Lire un chapitre</a>
     </div>
 </div>
 

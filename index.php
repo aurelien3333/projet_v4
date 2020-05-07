@@ -1,6 +1,6 @@
 <?php
+var_dump($_GET);
 session_start();
-
 function LoadClass($classe)
 {
     if (file_exists('./Controller/' . $classe . '.php')) {
@@ -67,8 +67,8 @@ if (!empty($_GET['action'])) {
             $userController->deleteConnexion();
         }
     }
-    //affiche la liste de tous les articles
-    if ($actionClean === 'listPosts') {
+        //affiche la liste de tous les articles
+    if ($actionClean === 'articles') {
         $postController->list();
         // Récupére les identifiant entré par l'utilisateur et verifie si ils sont valables
     } elseif ($actionClean === 'newConnexion') {
@@ -79,7 +79,7 @@ if (!empty($_GET['action'])) {
     } elseif ($actionClean === 'connexion') {
         $userController->connexion();
         //affiche un article par son id
-    } elseif ($actionClean === 'singlePost') {
+    } elseif ($actionClean === 'article') {
         $postController->get($idClean);
         //ajoute un commentaire avec l'id de l'article et en récupérant les info du post(author, contenu)
     } elseif ($actionClean === 'addComment') {
@@ -93,8 +93,12 @@ if (!empty($_GET['action'])) {
         //Report un commentaire
     } elseif ($actionClean === 'reportComment') {
         $commentController->report($idClean, $postIdClean);
+    } else {
+        echo "erreur";
     }
-    //affiche la list des article action par defaut
+
 } else {
-    require('./View/home.php');
+    //affiche la page home action par defaut
+    $viewController->Display('');
 }
+

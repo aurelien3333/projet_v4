@@ -33,7 +33,7 @@ class PostController
     public function remove(?int $id)
     {
         $postManager = new PostManager();
-        $post = $postManager->get($id);
+        $post = $postManager->getById($id);
         $postManager->delete($post);
         $commentManger = new CommentManager();
         $comments = $commentManger->getListByPostId($id);
@@ -48,7 +48,7 @@ class PostController
     public function modified(?int $id)
     {
         $postManager = new PostManager();
-        $post = $postManager->get($id);
+        $post = $postManager->getById($id);
         require('./View/modifiedPost.php');
 
     }
@@ -78,7 +78,7 @@ class PostController
     public function get(?int $id)
     {
         $postManager = new PostManager();
-        $post = $postManager->get($id);
+        $post = $postManager->getById($id);
 
         $commentManager = new CommentManager();
         $comments = $commentManager->getListByPostId($id);

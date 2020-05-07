@@ -20,7 +20,7 @@
                     <td><?= $posts[$i]->getAuthor(); ?></td>
                     <td><?= count($commentManager->getListByPostId($posts[$i]->getId())); ?> Commentaire(s)</td>
                     <td>
-                        <a href="/singlePost/<?= $posts[$i]->getId() ?>" title="Voir l'article"><i
+                        <a href="./article/<?= $posts[$i]->getId()?>/<?= $posts[$i]->getSlug()?>" title="Voir l'article"><i
                                     class="far fa-eye tableau_article_admin__view"></i></a>
                         <a href="./modifiedPost/<?= $posts[$i]->getId() ?>"
                            title="Modifier l'article"><i class="far fa-edit tableau_article_admin__edit"></i></a>

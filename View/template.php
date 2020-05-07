@@ -37,7 +37,7 @@
         </div>
         <div class='header__menu'>";
             <a class='header__menu__item' href='/home'>Accueill</a>
-            <a class='header__menu__item' href='/listPosts'>Chapitres</a>
+            <a class='header__menu__item' href='/articles'>Chapitres</a>
             <a class='header__menu__item' href='/biographie'>Biographie</a>
             <?php if (isset($_SESSION['pass']) AND isset($_SESSION['pseudo'])): ?>
                 <a class='header__menu__item' href='/admin'>Aller sur l'admin</a>

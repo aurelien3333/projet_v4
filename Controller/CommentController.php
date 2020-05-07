@@ -10,7 +10,7 @@ class CommentController{
         ]);
         $commentManager = new CommentManager();
         $commentManager->add($comment);
-        header('Location: /singlePost/' .$postId);
+        header('Location: /articles');
     }
     public function remove($id)
     {
@@ -25,6 +25,6 @@ class CommentController{
         $commentManger = new CommentManager();
         $comment = $commentManger->report($id);
 
-        header('Location: /singlePost/' .$postId);
+        header('Location: /articles');
     }
 }
