@@ -1,15 +1,12 @@
 * {
     box-sizing: border-box;
 }
-
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
 }
-
 .main {
-    /*background: url("/public/img/fond.jpg") repeat;*/
     background: url("/public/img/background2.jpg") fixed;
     min-height: 100%;
     position: relative;
@@ -33,7 +30,6 @@ html, body {
     font-size: 2em;
     padding-top: 30px;
 }
-
 .home__img {
     width: 200px;
     height: auto;
@@ -47,7 +43,6 @@ html, body {
     padding: 20px 20px 0 20px;
     text-align: justify;
     font-size: 22px;
-
 }
 .home__boutons{
     display: flex;
@@ -64,7 +59,7 @@ html, body {
 }
 
 /*page biographie*/
-.biographie{
+.biographie {
     width: 960px;
     margin: auto;
     background-color: rgba(255,255,255,0.8);
@@ -73,27 +68,48 @@ html, body {
     padding: 15px;
     margin-top: 40px;
 }
-
-.biographie__titre{
-
+.biographie__titre {
     text-decoration: underline;
     font-size: 2em;
     text-align: center;
 }
-
 .biographie__text{
     text-align: justify;
     font-size: 22px;
-
-
 }
 
-
 /* page ecrire un article */
-#mce {
-    width: 80%;
-    height: 600px;
+.addpost{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 50px 20px 10px 20px;
+    border-radius: 15px;
+}
+.addpost__label {
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 45%;
+    margin: 15px auto 5px auto;
+    border-radius: 15px;
+    text-align: center;
+}
+.addpost__input {
+    width: 45%;
     margin: auto;
+    padding: 10px;
+}
+.addpost__button {
+    width: 30%;
+    margin: 30px auto;
+    padding: 10px;
+    border-radius: 15px;
+}
+.tox-tinymce {
+    width: 90%;
+    margin: auto;
+    height: 500px!important;
+
 }
 
 /* Page admin */

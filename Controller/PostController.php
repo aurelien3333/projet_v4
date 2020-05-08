@@ -29,7 +29,6 @@ class PostController
         header('Location: /admin');
     }
 
-
     public function remove(?int $id)
     {
         $postManager = new PostManager();
@@ -50,7 +49,6 @@ class PostController
         $postManager = new PostManager();
         $post = $postManager->getById($id);
         require('./View/modifiedPost.php');
-
     }
 
     public function update(string $title, string $content, string $author, ?int $id)

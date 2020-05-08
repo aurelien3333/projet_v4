@@ -24,7 +24,8 @@ try {
     //nettoyage $_POST
     if (isset($_POST['title_post'], $_POST['content_post'], $_POST['author_post'])) {
         $postTitleClean = filter_var($_POST['title_post'], FILTER_SANITIZE_STRING);
-        $postContentClean = filter_var($_POST['content_post'], FILTER_SANITIZE_STRING);
+//        $postContentClean = filter_var($_POST['content_post'], FILTER_SANITIZE_STRING);
+        $postContentClean = $_POST['content_post'];
         $postAuthorClean = filter_var($_POST['author_post'], FILTER_SANITIZE_STRING);
     } elseif (isset($_POST['author_comment'], $_POST['content_comment'])) {
         $authorCommentClean = filter_var($_POST['author_comment'], FILTER_SANITIZE_STRING);
@@ -35,10 +36,8 @@ try {
     }
 
     //Si l'utilisateur est connecté
-    $connected = false;
-    if (isset($_SESSION['pass']) AND isset($_SESSION['pseudo'])) {
-        $connected = true;
-    }
+    $connected = (isset($_SESSION['pass']) AND isset($_SESSION['pseudo'])) ? $connected = true : $connected = false;
+
     //affiche la vue avec l'editeur de text pour ecrire un nouvel article
     $adminController = new AdminController();
     if ($actionClean === 'readPost' && $connected === true) {

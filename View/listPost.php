@@ -14,7 +14,7 @@
                 <?= strip_tags(substr($posts[$i]->getContent(), 0, 400)); ?>
             </p>
             <a class="list-post__contenu__posts__btn-lire-la-suite"
-               href="./article/<?= $posts[$i]->getId()?>/<?= $posts[$i]->getSlug()?>">Lire la suite</a>
+               href="./article/<?= $posts[$i]->getId()?>/<?= $posts[$i]->getSlug()?>"><?= $posts[$i]->getTitle(); ?> (suite)</a>
             <hr class="list-post__trait">
         </div>
     <?php endfor; ?>

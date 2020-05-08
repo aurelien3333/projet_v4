@@ -77,7 +77,6 @@ class PostManager extends Manager
     private function createSlug(Post $post)
     {
 
-
         $bad = array(
             'à', 'á', 'â', 'ã', 'ä', 'ç', 'è', 'é', 'ê', 'ë', 'ì', 'í',
             'î', 'ï', 'ñ', 'ò', 'ó', 'ô', 'õ', 'ö', 'ù', 'ú', 'û', 'ü',
@@ -95,6 +94,5 @@ class PostManager extends Manager
         $title = str_replace($bad, $good, $title);
 
         return $title;
-
     }
 }

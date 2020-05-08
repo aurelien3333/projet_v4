@@ -20,7 +20,8 @@
                     <td><?= $posts[$i]->getAuthor(); ?></td>
                     <td><?= count($commentManager->getListByPostId($posts[$i]->getId())); ?> Commentaire(s)</td>
                     <td>
-                        <a href="./article/<?= $posts[$i]->getId()?>/<?= $posts[$i]->getSlug()?>" title="Voir l'article"><i
+                        <a href="./article/<?= $posts[$i]->getId() ?>/<?= $posts[$i]->getSlug() ?>"
+                           title="Voir l'article"><i
                                     class="far fa-eye tableau_article_admin__view"></i></a>
                         <a href="./modifiedPost/<?= $posts[$i]->getId() ?>"
                            title="Modifier l'article"><i class="far fa-edit tableau_article_admin__edit"></i></a>
@@ -32,9 +33,17 @@
         </table>
     </div>
     <h2 class="admin__titre">Gestion des commentaires</h2>
-    <p class="admin__text">Les commentaires affichés en rouge ont été signalés par un utilisateur.</p>
+
 
     <div class="admin__tableau">
+
+
+
+
+            <?php if (count($comments) === 0) : ?>
+                <p class="admin__text">Aucun commentaire pour l'instant</p>
+            <?php else : ?>
+        <p class="admin__text">Les commentaires affichés en rouge ont été signalés par un utilisateur.</p>
         <table>
             <tr class="admin__tableau__header">
                 <td>Auteur</td>
@@ -43,8 +52,12 @@
                 <td>Article</td>
                 <td>Action</td>
             </tr>
+            <?php endif; ?>
 
             <?php for ($i = 0; $i < count($comments); $i++) : ?>
+
+
+
                 <?php if ($comments[$i]->getReport() === 'oui') : ?>
 
                     <tr class="admin__tableau__core">
