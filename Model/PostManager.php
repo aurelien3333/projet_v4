@@ -25,7 +25,12 @@ class PostManager extends Manager
         $req = $db->query('SELECT id, title, content, author, slug, DATE_FORMAT(creation_date, \'%d/%m/%Y à %H:%i\') AS creation_date_fr FROM posts WHERE id =' . $id);
         $donnees = $req->fetch(PDO::FETCH_ASSOC);
 
-        return new Post($donnees);
+        if ($donnees !== false) {
+            return new Post($donnees);
+        } else {
+            throw new Exception('Identifiant incorrect');
+        }
+
     }
 
     public function add(Post $post)

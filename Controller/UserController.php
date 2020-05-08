@@ -17,26 +17,25 @@ class UserController
 
     private function verifyInfo($user, $pass)
     {
-        if (!$user) {
-            echo "pseudo incorrect ";
+
+        if (password_verify($pass, $user[1])) {
+            $this->startConnexion($user);
         } else {
-            if (password_verify($pass,  $user[1])) {
-                echo 'connexion ok';
-                $this->startConnexion($user);
-            } else {
-                echo 'MDP incorrect';
-            }
+            throw new Exception("Pseudo ou mot de passe incorrect");
         }
+
     }
 
-    private function startConnexion($user){
+    private function startConnexion($user)
+    {
         $_SESSION['pass'] = $user[1];
         $_SESSION['pseudo'] = $user[0];
         echo 'Vous êtes connecté !';
         header('Location: /admin');
     }
 
-    public function deleteConnexion (){
+    public function deleteConnexion()
+    {
         session_destroy();
         header('Location: /');
     }

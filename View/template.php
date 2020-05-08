@@ -4,7 +4,7 @@
     <!--  Meta   -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="Jean Forteroche" content="Site officiel de Jean Forteroche"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="all"/>
     <title>Jean Forteroche</title>
     <!--  Balises Open graph pour Facebook  -->

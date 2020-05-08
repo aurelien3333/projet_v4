@@ -13,7 +13,7 @@ class Post
 
     public function __construct(array $donnees)
     {
-        $this->hydrate($donnees);
+      $this->hydrate($donnees);
     }
 
     public function hydrate(array $donnees)

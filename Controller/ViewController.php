@@ -1,11 +1,16 @@
 <?php
-class ViewController {
 
-    public function Display(string $view) {
-        if ($view === "biographie"){
+class ViewController
+{
+
+    public function Display(string $view = "home")
+    {
+        if ($view === "biographie") {
             require('./View/biographie.php');
-        } else {
-            require ('./View/home.php');
+        } elseif ($view === 'error') {
+            require('./View/error.php');
+        } elseif ($view === 'home') {
+            require('./View/home.php');
         }
     }
 }
