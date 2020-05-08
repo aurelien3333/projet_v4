@@ -152,6 +152,9 @@ html, body {
     background-color: lightgrey;
     font-weight: bold;
 }
+.tableau_admin__btn {
+    color: black;
+}
 
 td, th {
     padding: 10px 20px;

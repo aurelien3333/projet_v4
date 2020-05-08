@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f2e2dae6-b384-48bb-9466-399a2d21f0f6" name="IONOS" url="http://access815124252.webspace-data.io">
+        <fileTransfer host="access815124252.webspace-data.io" port="22" rootFolder="/clickandbuilds/jean-forteroche" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

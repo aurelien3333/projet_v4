@@ -8,18 +8,18 @@
     <meta name="robots" content="all"/>
     <title>Jean Forteroche</title>
     <!--  Balises Open graph pour Facebook  -->
-    <meta property="og:url" content="http://localhost/"/>
+    <meta property="og:url" content="http://jean-forteroche.fr/"/>
     <meta property="og:title" content="Site officiel de Jean Forteroche"/>
     <meta property="og:description" content="Retrouvez toute l'actualité de Jean Forteroche"/>
-    <meta property="og:image" content="http://localhost/public/img/jean_forteroche.jpg"/>
+    <meta property="og:image" content="http://jean-forteroche.fr/public/img/jean_forteroche.jpg"/>
     <!--  Balises Twiter Card pour Twitter  -->
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:title" content="Site officiel de Jean Forteroche">
-    <meta name="twitter:url" content="http://www.localhost">
+    <meta name="twitter:url" content="http://jean-forteroche.fr/">
     <meta name="twitter:description" content="Retrouvez toute l'actualité de Jean Forteroche">
-    <meta name="twitter:image" content="http://localhost/public/img/jean_forteroche.jpg">
+    <meta name="twitter:image" content="http://jean-forteroche.fr/public/img/jean_forteroche.jpg">
     <!-- Balises css, js, fontawesome, tiniyMCE et google font    -->
-    <base href="http://localhost/"/>
+    <base href="http://jean-forteroche.fr//"/>
     <link href="public/css/style.css" rel="stylesheet" type="text/css"/>
     <link href="public/css/reset.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Josefin+Slab&display=swap"
@@ -54,17 +54,17 @@
             <div class="footer__content__plan">
                 <h3 class="footer__content__titre">Plan du site</h3>
                 <div class="footer__content__menu">
-                    <a class="footer__content__menu__items">Accueil</a>
-                    <a class="footer__content__menu__items">Biographie</a>
-                    <a class="footer__content__menu__items">Chapitres</a>
+                    <a href="/home" class="footer__content__menu__items">Accueil</a>
+                    <a href="/biographie" class="footer__content__menu__items">Biographie</a>
+                    <a href="/articles" class="footer__content__menu__items">Chapitres</a>
                 </div>
             </div>
             <div class="footer__content__social">
                 <h3 class="footer__content__titre">Mes réseaux</h3>
                 <div class="footer__content__menu">
-                    <a class="footer__content__menu__items">Facebook</a>
-                    <a class="footer__content__menu__items">Twitter</a>
-                    <a class="footer__content__menu__items">Instagram</a>
+                    <a href="https://www.facebook.com" class="footer__content__menu__items" target="_blank">Facebook</a>
+                    <a href="https://www.twitter.com" class="footer__content__menu__items" target="_blank">Twitter</a>
+                    <a href="https://www.instagram.com" class="footer__content__menu__items" target="_blank">Instagram</a>
                 </div>
             </div>
             <div class="footer__content_admin">

@@ -1,23 +1,8 @@
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-
-#RewriteRule ^articles$ index.php?action=listPosts [L]
-#RewriteRule ^article/([0-9]+)/([0-9a-z-]+)$ index.php?action=singlePost&id=$1 [L]
-#RewriteRule ^addComment/([0-9]+)$ index.php?action=addComment&postId=$1 [L]
-#RewriteRule ^removePost/([0-9]+)$ index.php?action=removePost&id=$1 [L]
-#RewriteRule ^modifiedPost/([0-9]+)$ index.php?action=modifiedPost&id=$1 [L]
-#RewriteRule ^updatePost/([0-9]+)$ index.php?action=updatePost&id=$1 [L]
-#RewriteRule ^removeComment/([0-9]+)$ index.php?action=removeComment&id=$1 [L]
-#RewriteRule ^reportComment/([0-9]+)/([0-9]+)$ index.php?action=reportComment&id=$1$&postId=$2 [L]
-#RewriteRule ^connexion$ index.php?action=connexion [L]
-#RewriteRule ^newConnexion$ index.php?action=newConnexion [L]
-#RewriteRule ^admin$ index.php?action=admin [L]
-#RewriteRule ^readPost$ index.php?action=readPost [L]
-#RewriteRule ^addPost$ index.php?action=addPost [L]
-#RewriteRule ^removeConnexion$ index.php?action=removeConnexion [L]
-#RewriteRule ^home$ index.php?action=home [L]
-#RewriteRule ^biographie$ index.php?action=biographie [L]
+RewriteBase /
+Options All -Indexes
 
 RewriteRule ^reportComment/([0-9]+)/([0-9]+)$ index.php?action=reportComment&id=$1$&postId=$2 [L]
 RewriteRule ^addComment/([0-9]+)$ index.php?action=addComment&postId=$1 [L]

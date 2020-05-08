@@ -5,7 +5,6 @@
             <tr class="admin__tableau__header">
                 <td>Titre</td>
                 <td>Date de création</td>
-                <td>Aperçu</td>
                 <td>Auteur</td>
                 <td>Comentaire</td>
                 <td>Action</td>
@@ -16,17 +15,16 @@
                 <tr class="admin__tableau__core">
                     <td><?= $posts[$i]->getTitle(); ?></td>
                     <td><?= $posts[$i]->getCreationDateFr(); ?></td>
-                    <td><?= strip_tags(substr($posts[$i]->getContent(), 0, 200)); ?></td>
                     <td><?= $posts[$i]->getAuthor(); ?></td>
                     <td><?= count($commentManager->getListByPostId($posts[$i]->getId())); ?> Commentaire(s)</td>
                     <td>
                         <a href="./article/<?= $posts[$i]->getId() ?>/<?= $posts[$i]->getSlug() ?>"
                            title="Voir l'article"><i
-                                    class="far fa-eye tableau_article_admin__view"></i></a>
+                                    class="far fa-eye tableau_admin__btn"></i></a>
                         <a href="./modifiedPost/<?= $posts[$i]->getId() ?>"
-                           title="Modifier l'article"><i class="far fa-edit tableau_article_admin__edit"></i></a>
+                           title="Modifier l'article"><i class="far fa-edit tableau_admin__btn"></i></a>
                         <a href="/removePost/<?= $posts[$i]->getId() ?>" title="Effacer l'article"><i
-                                    class="far fa-trash-alt tableau_article_admin__delete"></i></a>
+                                    class="far fa-trash-alt tableau_admin__btn"></i></a>
                     </td>
                 </tr>
             <?php endfor; ?>
@@ -66,8 +64,8 @@
                         <td class="report"><?= $comments[$i]->getComment() ?></td>
                         <td class="report"><?= $comments[$i]->getTitlePost(); ?></td>
                         <td>
-                            <a href="/removeComment/<?= $comments[$i]->getId() ?>" title="Effacer l'article">
-                                <i class="far fa-trash-alt tableau_article_admin__delete"></i></a>
+                            <a href="/removeComment/<?= $comments[$i]->getId() ?>" title="Effacer le commentaire">
+                                <i class="far fa-trash-alt tableau_admin__btn"></i></a>
                         </td>
                     </tr>
                 <?php else : ?>
