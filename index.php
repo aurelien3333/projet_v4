@@ -8,7 +8,6 @@ function LoadClass($classe)
         require './Model/' . $classe . '.php';
     }
 }
-
 spl_autoload_register('LoadClass');
 
 $postController = new PostController();
@@ -20,7 +19,7 @@ try {
     $actionClean = isset($_GET['action']) && (string)$_GET['action'] ? filter_var($_GET['action'], FILTER_SANITIZE_STRING) : null;
     $idClean = isset($_GET['id']) && (int)$_GET['id'] > 0 ? filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT) : null;
     $postIdClean = isset($_GET['postId']) && (int)$_GET['postId'] > 0 ? filter_var($_GET['postId'], FILTER_SANITIZE_NUMBER_INT) : null;
-
+    $postSlugClean = isset($_GET['slug']) ? filter_var($_GET['slug'], FILTER_SANITIZE_STRING) : null;
     //nettoyage $_POST
     if (isset($_POST['title_post'], $_POST['content_post'], $_POST['author_post'])) {
         $postTitleClean = filter_var($_POST['title_post'], FILTER_SANITIZE_STRING);
@@ -78,7 +77,7 @@ try {
         $postController->get($idClean);
         //ajoute un commentaire avec l'id de l'article et en récupérant les info du post(author, contenu)
     } elseif ($actionClean === 'addComment') {
-        $commentController->add($postIdClean, $authorCommentClean, $contentCommentClean);
+        $commentController->add($postIdClean, $authorCommentClean, $contentCommentClean, $postSlugClean);
         //Affiche la page home
     } elseif ($actionClean === 'home') {
         $viewController->Display($actionClean);
@@ -87,7 +86,7 @@ try {
         $viewController->Display($actionClean);
         //Report un commentaire
     } elseif ($actionClean === 'reportComment') {
-        $commentController->report($idClean, $postIdClean);
+        $commentController->report($idClean, $postIdClean, $postSlugClean);
     } elseif ($actionClean === null) {
         $viewController->Display();
     } else {

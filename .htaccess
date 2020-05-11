@@ -4,8 +4,9 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteBase /
 Options All -Indexes
 
-RewriteRule ^reportComment/([0-9]+)/([0-9]+)$ index.php?action=reportComment&id=$1$&postId=$2 [L]
-RewriteRule ^addComment/([0-9]+)$ index.php?action=addComment&postId=$1 [L]
+RewriteRule ^reportComment/([0-9]+)/([0-9]+)/([0-9a-z-]+)$ index.php?action=reportComment&id=$1&postId=$2&slug=$3 [L]
+#RewriteRule ^article/([0-9]+)/([0-9a-z-]+)/([0-9]+)$ index.php?action=article&id=$1&slug=$2 [L]
+RewriteRule ^addComment/([0-9]+)/([0-9a-z-]+)$ index.php?action=addComment&postId=$1&slug=$2 [L]
 RewriteRule ^([0-9a-zA-Z]+)/([0-9]+)/([0-9a-z-]+)$ index.php?action=$1&id=$2 [L]
 RewriteRule ^([0-9a-zA-Z]+)/([0-9]+)$ index.php?action=$1&id=$2 [L]
 RewriteRule ^([0-9a-zA-Z]+)$ index.php?action=$1

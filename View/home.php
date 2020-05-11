@@ -8,7 +8,7 @@
         À travers ma carrière d'auteur, c'est la première fois que je me lance dans une écriture de roman 2.0, pouvoir partager mon roman directement avec vous me motive à me dépasser j'espère que ce challenge vous plaira autant qu'à moi.
     </p>
     <div class="home__boutons">
-        <a class="home__bouton" href="">Ma biographie</a>
+        <a class="home__bouton" href="/biographie">Ma biographie</a>
         <a class="home__bouton" href="/articles">Lire un chapitre</a>
     </div>
 </div>

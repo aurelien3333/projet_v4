@@ -30,7 +30,6 @@ class UserController
     {
         $_SESSION['pass'] = $user[1];
         $_SESSION['pseudo'] = $user[0];
-        echo 'Vous êtes connecté !';
         header('Location: /admin');
     }
 

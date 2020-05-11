@@ -1,8 +1,4 @@
-
 <?php ob_start(); ?>
-
-
-
 
 <form action="/addPost" method="post" class="addpost">
 

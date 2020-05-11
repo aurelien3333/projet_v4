@@ -1,6 +1,10 @@
 * {
     box-sizing: border-box;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
 html, body {
     margin: 0;
     padding: 0;
@@ -127,12 +131,10 @@ html, body {
 .admin__tableau {
     width: 95%;
     margin: auto;
-
 }
 
 .report {
     color: red;
-    /*font-weight: bold;*/
 }
 .admin__text{
     text-align: center;
@@ -407,6 +409,9 @@ table {
     display: block;
     text-decoration: none;
     border-radius: 8px;
+}
+.comment__display__btn-report-active{
+    background: #000d9c !important;
 }
 
 /*Page de connexion*/
