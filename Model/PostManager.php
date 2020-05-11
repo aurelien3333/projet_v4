@@ -30,7 +30,6 @@ class PostManager extends Manager
         } else {
             throw new Exception('Identifiant incorrect');
         }
-
     }
 
     public function add(Post $post)

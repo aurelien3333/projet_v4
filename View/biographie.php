@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<div class="biographie">
+<main class="biographie">
     <h3 class="biographie__titre">Biographie</h3>
     <p class="biographie__text"><strong>Jean Forteroche</strong> est un romancier, dramaturge, scénariste et réalisateur
         français.</p>
@@ -53,7 +53,7 @@
 
 
 
-</div>
+</main>
 
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php'); ?>

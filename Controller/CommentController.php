@@ -2,7 +2,7 @@
 
 class CommentController{
 
-    public function add($postId, $author, $comment, $slug){
+    public function add($postId, $author, $comment,$slug){
         $comment = new Comment([
             'post_id' => $postId,
             'comment' => $comment,
@@ -11,7 +11,7 @@ class CommentController{
         $commentManager = new CommentManager();
         $commentManager->add($comment);
 
-        header('Location: /article/' . $postId . '/' . $slug . '#comment');
+        header('Location: /article/' . $slug . '/' . $postId . '#comment');
     }
     public function remove($id)
     {
@@ -26,6 +26,6 @@ class CommentController{
         $commentManger = new CommentManager();
         $comment = $commentManger->report($id);
 
-        header('Location: /article/' . $postId . '/' . $slug . '#' . $id);
+        header('Location: /article/' . $slug . '/' . $postId . '#' . $id);
     }
 }

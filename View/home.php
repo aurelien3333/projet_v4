@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<div class="home">
+<main class="home">
     <h2 class="home__titre">Bienvenue sur le site de Jean Forteroche</h2>
     <p class="home__text">
         <img class="home__img" src="/public/img/jean_forteroche.jpg" alt="jean forteroche">
@@ -11,7 +11,7 @@
         <a class="home__bouton" href="/biographie">Ma biographie</a>
         <a class="home__bouton" href="/articles">Lire un chapitre</a>
     </div>
-</div>
+</main>
 
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php'); ?>

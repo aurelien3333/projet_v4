@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
-
-<div class="post box">
+<main>
+<article class="post box">
     <div class="post__header">
         <span class="post__header__date">le <?= $post->getCreationDateFr(); ?></span>
         <span class="post__header__auteur">Par <strong><?= $post->getAuthor(); ?></strong></span>
@@ -12,7 +12,7 @@
     <div class="post__contenu">
         <?= nl2br($post->getContent()); ?>
     </div>
-</div>
+</article>
 
 <div class="comment__display box">
     <?php if (count($comments) == 0) :
@@ -26,7 +26,7 @@
         <div class="comment__display__comment" id="<?= $comments[$i]->getId(); ?>"><?= $comments[$i]->getComment(); ?></div>
         <?php if ($comments[$i]->getReport() === 'non') : ?>
             <a class="comment__display__btn-report"
-               href="/reportComment/<?= $comments[$i]->getId(); ?>/<?= $comments[$i]->getPostId(); ?>/<?= $post->getSlug(); ?>">Signaler ce
+               href="/reportComment/<?= $post->getSlug(); ?>/<?= $comments[$i]->getId(); ?>/<?= $comments[$i]->getPostId(); ?>">Signaler ce
                 commentaire</a>
         <?php else: ?>
             <div class="comment__display__btn-report comment__display__btn-report-active">Commentaire signalé</div>
@@ -38,7 +38,7 @@
 <div class="comment__add box">
     <h3 class="comment__add__title">Laisser un commentaire</h3>
     <p class="comment__add__text">Les champs obligatoires sont indiqués avec *</p>
-    <form action="/addComment/<?= $post->getId(); ?>/<?= $post->getSlug(); ?>" class="comment__add__form" method="post">
+    <form action="/addComment/<?= $post->getSlug(); ?>/<?= $post->getId(); ?>" class="comment__add__form" method="post">
         <input type="text" id="author_comment" name="author_comment" placeholder="Nom *"
                class="comment__add__form__pseudo">
         <textarea name="content_comment" id="content_comment" placeholder="Rédigez votre commentaire"
@@ -46,7 +46,7 @@
         <button type="submit" class="comment__add__form__button">Publier votre commentaire</button>
     </form>
 </div>
-
+</main>
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php'); ?>
 

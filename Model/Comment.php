@@ -9,6 +9,7 @@ class Comment
     private $_comment_date_fr;
     private $_title_post;
     private $_report;
+    private $_slug_post;
 
 
     public function __construct(array $donnees)
@@ -39,6 +40,19 @@ class Comment
         if (isset($donnees['title_post'])) {
             $this->setTitlePost($donnees['title_post']);
         }
+        if (isset($donnees['slug_post'])) {
+            $this->setSlugPost($donnees['slug_post']);
+        }
+    }
+
+    public function getSlugPost()
+    {
+        return $this->_slug_post;
+    }
+
+    public function setSlugPost($slug_post): void
+    {
+        $this->_slug_post = $slug_post;
     }
 
     public function getId()

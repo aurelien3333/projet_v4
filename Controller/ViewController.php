@@ -2,7 +2,6 @@
 
 class ViewController
 {
-
     public function Display(string $view = "home")
     {
         if ($view === "biographie") {

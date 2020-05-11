@@ -30,7 +30,6 @@ html, body {
 .home__titre {
     color: white;
     text-align: center;
-    text-decoration: underline;
     font-size: 2em;
     padding-top: 30px;
 }
@@ -73,7 +72,6 @@ html, body {
     margin-top: 40px;
 }
 .biographie__titre {
-    text-decoration: underline;
     font-size: 2em;
     text-align: center;
 }
@@ -123,7 +121,6 @@ html, body {
     margin: 30px auto 20px auto;
     padding: 20px;
     font-size: 32px;
-    text-decoration: underline;
     color: white;
     background-color: rgba(0, 0, 0, 0.6);
 }
@@ -232,7 +229,6 @@ table {
     margin: 40px auto 0 auto;
     padding: 20px;
     font-size: 32px;
-    text-decoration: underline;
     color: white;
     width: 960px;
     background-color: rgba(0, 0, 0, 0.6);

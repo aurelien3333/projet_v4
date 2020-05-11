@@ -30,12 +30,12 @@
 </head>
 <body>
 <div class="main">
-    <div class="header">
+    <header class="header">
         <div class="header__logo">
             <img src="/public/img/logo_blanc.png" alt="logo" class="header__logo__img">
             <h1 class="header__logo__titre">Billet simple<br/>pour l'Alaska</h1>
         </div>
-        <div class='header__menu'>";
+        <nav class='header__menu'>";
             <a class='header__menu__item' href='/home'>Accueill</a>
             <a class='header__menu__item' href='/articles'>Chapitres</a>
             <a class='header__menu__item' href='/biographie'>Biographie</a>
@@ -44,32 +44,32 @@
                 <a class='header__menu__item' href='/readPost'>Rediger un article</a>
                 <a class='header__menu__item' href='/removeConnexion'>Déconnexion</a>
             <?php endif; ?>
-        </div>
-    </div>
+        </nav>
+    </header>
 
     <?= $content ?>
 
-    <div class="footer">
+    <footer class="footer">
         <div class="footer__content">
             <div class="footer__content__plan">
                 <h3 class="footer__content__titre">Plan du site</h3>
-                <div class="footer__content__menu">
+                <nav class="footer__content__menu">
                     <a href="/home" class="footer__content__menu__items">Accueil</a>
                     <a href="/biographie" class="footer__content__menu__items">Biographie</a>
                     <a href="/articles" class="footer__content__menu__items">Chapitres</a>
-                </div>
+                </nav>
             </div>
             <div class="footer__content__social">
                 <h3 class="footer__content__titre">Mes réseaux</h3>
-                <div class="footer__content__menu">
+                <nav class="footer__content__menu">
                     <a href="https://www.facebook.com" class="footer__content__menu__items" target="_blank">Facebook</a>
                     <a href="https://www.twitter.com" class="footer__content__menu__items" target="_blank">Twitter</a>
                     <a href="https://www.instagram.com" class="footer__content__menu__items" target="_blank">Instagram</a>
-                </div>
+                </nav>
             </div>
             <div class="footer__content_admin">
                 <h3 class="footer__content__titre">Admin</h3>
-                <div class="footer__content__menu">
+                <nav class="footer__content__menu">
                     <?php if (isset($_SESSION['pass']) AND isset($_SESSION['pseudo'])): ?>
                         <a class='footer__content__menu__items' href='/admin'>Aller sur l'admin</a>
                         <a class='footer__content__menu__items' href='/readPost'>Rediger un article</a>
@@ -77,14 +77,14 @@
                     <?php else: ?>
                         <a class="footer__content__menu__items" href='/connexion'>Connexion</a>
                     <?php endif; ?>
-                </div>
+                </nav>
             </div>
 
         </div>
         <p class="footer__copyright">
             Copyright © Aurélien Verdeau - 2019. Tous droits réservés
         </p>
-    </div>
+    </footer>
 </div>
 </body>
 
