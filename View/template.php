@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:og="http://ogp.me/ns#">
+<html lang="fr">
 <head>
     <!--  Meta   -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
