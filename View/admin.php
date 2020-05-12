@@ -11,23 +11,23 @@
                 <td>Action</td>
             </tr>
 
-            <?php for ($i = 0; $i < count($posts); $i++) : ?>
+            <?php foreach ($posts as $post) : ?>
                 <tr class="admin__tableau__core">
-                    <td><a href="/article/<?= $posts[$i]->getSlug() ?>/<?= $posts[$i]->getId() ?>"><?= $posts[$i]->getTitle(); ?></a></td>
-                    <td><?= $posts[$i]->getCreationDateFr(); ?></td>
-                    <td><?= $posts[$i]->getAuthor(); ?></td>
-                    <td><?= count($commentManager->getListByPostId($posts[$i]->getId())); ?> Commentaire(s)</td>
+                    <td><a href="/article/<?= $post->getSlug() ?>/<?= $post->getId() ?>"><?= $post->getTitle(); ?></a></td>
+                    <td><?= $post->getCreationDateFr(); ?></td>
+                    <td><?= $post->getAuthor(); ?></td>
+                    <td><?= count($commentManager->getListByPostId($post->getId())); ?> Commentaire(s)</td>
                     <td>
-                        <a href="/article/<?= $posts[$i]->getSlug() ?>/<?= $posts[$i]->getId() ?>"
+                        <a href="/article/<?= $post->getSlug() ?>/<?= $post->getId() ?>"
                            title="Voir l'article"><i
                                     class="far fa-eye tableau_admin__btn"></i></a>
-                        <a href="./modifiedPost/<?= $posts[$i]->getId() ?>"
+                        <a href="./modifiedPost/<?= $post->getId() ?>"
                            title="Modifier l'article"><i class="far fa-edit tableau_admin__btn"></i></a>
-                        <a href="/removePost/<?= $posts[$i]->getId() ?>" title="Effacer l'article"><i
+                        <a href="/removePost/<?= $post->getId() ?>" title="Effacer l'article"><i
                                     class="far fa-trash-alt tableau_admin__btn"></i></a>
                     </td>
                 </tr>
-            <?php endfor; ?>
+            <?php endforeach; ?>
         </table>
     </div>
     <h2 class="admin__titre">Gestion des commentaires</h2>
@@ -49,40 +49,37 @@
             </tr>
             <?php endif; ?>
 
-            <?php for ($i = 0; $i < count($comments); $i++) : ?>
+            <?php foreach ($comments as $comment) : ?>
 
-                <?php if ($comments[$i]->getReport() === 'oui') : ?>
+                <?php if ($comment->getReport() === 'oui') : ?>
 
                     <tr class="admin__tableau__core">
-                        <td class="report"><?= $comments[$i]->getAuthor() ?></td>
-                        <td class="report"><?= $comments[$i]->getCommentDateFr() ?></td>
-                        <td class="report"><a href="/article/<?= $comments[$i]->getSlugPost() ?>/<?= $comments[$i]->getPostId() . '#' . $comments[$i]->getId()?>"><?= $comments[$i]->getComment() ?></a></td>
-                        <td class="report"><?= $comments[$i]->getTitlePost(); ?></td>
+                        <td class="report"><?= $comment->getAuthor() ?></td>
+                        <td class="report"><?= $comment->getCommentDateFr() ?></td>
+                        <td class="report"><a href="/article/<?= $comment->getSlugPost() ?>/<?= $comment->getPostId() . '#' . $comment->getId()?>"><?= $comment->getComment() ?></a></td>
+                        <td class="report"><?= $comment->getTitlePost(); ?></td>
                         <td>
-                            <a href="/article/<?=$comments[$i]->getSlugPost() ?>/<?= $comments[$i]->getPostId() . '#' . $comments[$i]->getId()?>"><i
+                            <a href="/article/<?=$comment->getSlugPost() ?>/<?= $comment->getPostId() . '#' . $comment->getId()?>"><i
                                         class="far fa-eye tableau_admin__btn"></i></a>
-                            <a href="/removeComment/<?= $comments[$i]->getId() ?>" title="Effacer le commentaire">
+                            <a href="/removeComment/<?= $comment->getId() ?>" title="Effacer le commentaire">
                                 <i class="far fa-trash-alt tableau_admin__btn"></i></a>
                         </td>
                     </tr>
                 <?php else : ?>
-                   <!-- <?/*= '<pre>' */?>
-                    <?php /*var_dump($comments[$i]);*/?>
-                    --><?/*= '<pre>'; die();*/?>
                     <tr class="admin__tableau__core">
-                        <td><?= $comments[$i]->getAuthor() ?></td>
-                        <td><?= $comments[$i]->getCommentDateFr() ?></td>
-                        <td><a href="/article/<?= $comments[$i]->getSlugPost() ?>/<?= $comments[$i]->getPostId() . '#' . $comments[$i]->getId()?>"><?= $comments[$i]->getComment() ?></a></td>
-                        <td><?= $comments[$i]->getTitlePost(); ?></td>
+                        <td><?= $comment->getAuthor() ?></td>
+                        <td><?= $comment->getCommentDateFr() ?></td>
+                        <td><a href="/article/<?= $comment->getSlugPost() ?>/<?= $comment->getPostId() . '#' . $comment->getId()?>"><?= $comment->getComment() ?></a></td>
+                        <td><?= $comment->getTitlePost(); ?></td>
                         <td>
-                            <a href="/article/<?= $comments[$i]->getSlugPost() ?>/<?= $comments[$i]->getPostId() . '#' . $comments[$i]->getId()?>"><i
+                            <a href="/article/<?= $comment->getSlugPost() ?>/<?= $comment->getPostId() . '#' . $comment->getId()?>"><i
                                         class="far fa-eye tableau_admin__btn"></i></a>
-                            <a href="/removeComment/<?= $comments[$i]->getId() ?>" title="Effacer l'article">
+                            <a href="/removeComment/<?= $comment->getId() ?>" title="Effacer l'article">
                                 <i class="far fa-trash-alt tableau_article_admin__delete"></i></a>
                         </td>
                     </tr>
                 <?php endif ?>
-            <?php endfor; ?>
+            <?php endforeach; ?>
         </table>
     </div>
 </main>

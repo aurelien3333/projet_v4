@@ -18,7 +18,7 @@ class PostManager extends Manager
         return $posts;
     }
 
-    public function getById($id)
+    public function getById(int $id)
     {
         $id = (int)$id;
         $db = $this->dbConnect();

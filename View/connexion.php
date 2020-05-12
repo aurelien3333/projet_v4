@@ -1,6 +1,5 @@
 <?php ob_start(); ?>
 
-
 <div class="connexion">
     <h3 class="connexion__titre">Identification</h3>
     <form action="/newConnexion" class="connexion__form" method="post">
@@ -9,8 +8,6 @@
         <button type="submit" class="connexion__form__bouton">Connexion</button>
     </form>
 </div>
-
-
 
     <?php $content = ob_get_clean(); ?>
     <?php require('template.php'); ?>

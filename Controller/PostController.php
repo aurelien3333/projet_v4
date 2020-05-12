@@ -29,7 +29,7 @@ class PostController
         header('Location: /admin');
     }
 
-    public function remove(?int $id)
+    public function remove(int $id)
     {
         $postManager = new PostManager();
         $post = $postManager->getById($id);

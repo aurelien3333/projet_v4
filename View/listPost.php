@@ -3,20 +3,20 @@
 <h2 class="list-post__titre">Derniers chapitres publiés</h2>
 <div class="list-post box">
 
-    <?php for ($i = 0; $i < count($posts); $i++) : ?>
+    <?php foreach ($posts as $post) : ?>
         <article class="list-post__posts">
-            <a class="list-post__posts__link" href="/article/<?= $posts[$i]->getId()?>/<?= $posts[$i]->getSlug()?>"><h3 class="list-post__posts__titre">
-                <?= $posts[$i]->getTitle(); ?>
+            <a class="list-post__posts__link" href="/article/<?= $post->getId()?>/<?= $post->getSlug()?>"><h3 class="list-post__posts__titre">
+                <?= $post->getTitle(); ?>
             </h3></a>
-            <div class="list-post__posts__titre__date">le <?= $posts[$i]->getCreationDateFr(); ?></div>
+            <div class="list-post__posts__titre__date">le <?= $post->getCreationDateFr(); ?></div>
             <p class="list-post__contenu__posts">
-                <?= strip_tags(substr($posts[$i]->getContent(), 0, 400)); ?>
+                <?= strip_tags(substr($post->getContent(), 0, 400)); ?>
             </p>
             <a class="list-post__contenu__posts__btn-lire-la-suite"
-               href="/article/<?= $posts[$i]->getSlug()?>/<?= $posts[$i]->getId()?>"><?= $posts[$i]->getTitle(); ?> (suite)</a>
+               href="/article/<?= $post->getSlug()?>/<?= $post->getId()?>"><?= $post->getTitle(); ?> (suite)</a>
             <hr class="list-post__trait">
         </article>
-    <?php endfor; ?>
+    <?php endforeach; ?>
 </div>
 </main>
     <?php $content = ob_get_clean(); ?>

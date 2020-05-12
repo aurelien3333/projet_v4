@@ -8,25 +8,24 @@ class UserController
         require('./View/connexion.php');
     }
 
-    public function check($pseudo, $pass)
+    public function check(string $pseudo, string $pass)
     {
         $user = new User();
         $user = $user->getPassByName($pseudo);
         $this->verifyInfo($user, $pass);
+
     }
 
     private function verifyInfo($user, $pass)
     {
-
         if (password_verify($pass, $user[1])) {
             $this->startConnexion($user);
         } else {
             throw new Exception("Pseudo ou mot de passe incorrect");
         }
-
     }
 
-    private function startConnexion($user)
+    private function startConnexion(array $user)
     {
         $_SESSION['pass'] = $user[1];
         $_SESSION['pseudo'] = $user[0];

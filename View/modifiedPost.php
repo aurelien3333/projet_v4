@@ -13,13 +13,7 @@
     <button type="submit" class="addpost__button">Modifier</button>
 </form>
 
-<script>
-	tinymce.init({
-		selector: 'textarea#mce',
-		toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent'
-
-	});
-</script>
+<script type="text/javascript" src="/public/js/tinymce.js"></script>
 
 <?php $content = ob_get_clean(); ?>
 

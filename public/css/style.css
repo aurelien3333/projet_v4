@@ -1,15 +1,18 @@
 * {
     box-sizing: border-box;
 }
-a{
+
+a {
     text-decoration: none;
     color: black;
 }
+
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
 }
+
 .main {
     background: url("/public/img/background2.jpg") fixed;
     min-height: 100%;
@@ -22,17 +25,19 @@ html, body {
 .home {
     width: 960px;
     margin: 50px auto auto auto;
-    background-color: rgba(150,150,150,0.8);
+    background-color: rgba(150, 150, 150, 0.8);
     border-radius: 16px;
     display: flex;
     flex-direction: column;
 }
+
 .home__titre {
     color: white;
     text-align: center;
     font-size: 2em;
     padding-top: 30px;
 }
+
 .home__img {
     width: 200px;
     height: auto;
@@ -41,18 +46,21 @@ html, body {
     border-radius: 10%;
     float: left;
 }
+
 .home__text {
     color: white;
     padding: 20px 20px 0 20px;
     text-align: justify;
     font-size: 22px;
 }
-.home__boutons{
+
+.home__boutons {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
-.home__bouton{
+
+.home__bouton {
     text-decoration: none;
     padding: 15px;
     color: white;
@@ -65,29 +73,32 @@ html, body {
 .biographie {
     width: 960px;
     margin: auto;
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 16px;
     color: black;
     padding: 15px;
     margin-top: 40px;
 }
+
 .biographie__titre {
     font-size: 2em;
     text-align: center;
 }
-.biographie__text{
+
+.biographie__text {
     text-align: justify;
     font-size: 22px;
 }
 
 /* page ecrire un article */
-.addpost{
+.addpost {
     display: flex;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.2);
     margin: 50px 20px 10px 20px;
     border-radius: 15px;
 }
+
 .addpost__label {
     font-size: 1.5em;
     font-weight: bold;
@@ -96,21 +107,24 @@ html, body {
     border-radius: 15px;
     text-align: center;
 }
+
 .addpost__input {
     width: 45%;
     margin: auto;
     padding: 10px;
 }
+
 .addpost__button {
     width: 30%;
     margin: 30px auto;
     padding: 10px;
     border-radius: 15px;
 }
+
 .tox-tinymce {
     width: 90%;
     margin: auto;
-    height: 500px!important;
+    height: 500px !important;
 
 }
 
@@ -133,10 +147,11 @@ html, body {
 .report {
     color: red;
 }
-.admin__text{
+
+.admin__text {
     text-align: center;
     color: white;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     width: 35%;
     margin: 0 auto 10px auto;
     padding: 10px;
@@ -151,6 +166,7 @@ html, body {
     background-color: lightgrey;
     font-weight: bold;
 }
+
 .tableau_admin__btn {
     color: black;
 }
@@ -219,6 +235,7 @@ table {
     margin-top: 50px;
     padding: 20px;
 }
+
 .list-post__posts__link {
     text-decoration: none;
     color: #990000;
@@ -406,7 +423,8 @@ table {
     text-decoration: none;
     border-radius: 8px;
 }
-.comment__display__btn-report-active{
+
+.comment__display__btn-report-active {
     background: #000d9c !important;
 }
 
@@ -490,12 +508,119 @@ table {
 }
 
 /*  Page error   */
-.error{
+.error {
     width: 80%;
     margin: 150px auto;
     padding: 20px;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
     font-size: 3em;
     text-align: center;
+}
+
+/*responsive */
+
+@media (max-width: 1120px) {
+    .header__logo__titre {
+        font-size: 32px;
+        padding-left: 4px;
+    }
+
+    .header {
+        height: 130px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header__menu {
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+}
+
+@media (max-width: 992px) {
+    td, th {
+        padding: 10px 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header {
+        height: 312px;
+    }
+
+    .header__logo {
+
+        padding-bottom: 0;
+    }
+
+    .header__menu__item {
+
+        margin-right: 0;
+        padding: 6px;
+    }
+
+    .header__menu {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .list-post__titre, .home, .biographie, .list-post, .box {
+        width: auto;
+        margin: 15px 5px ;
+    }
+    .footer__content {
+        width: auto;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+    }
+    .footer {
+        height: 420px;
+        text-align: center;
+    }
+    .main {
+        padding-bottom: 420px;
+    }
+    .addpost__input {
+        width: 90%;
+    }
+    .tox-tinymce {
+        width: 100%;
+    }
+    table,
+    tbody,
+    tr,
+    td {
+        display: block;
+        width: auto;
+        text-align: center;
+    }
+    .admin__tableau__header{
+        display: none;
+    }
+    tr{
+        margin-bottom: 10px;
+    }
+    .admin__text {
+        width: 85%;
+    }
+    .fa, .far, .fas {
+        font-size: 22px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 540px) {
+
 }

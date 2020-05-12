@@ -18,21 +18,21 @@
     <?php if (count($comments) == 0) :
         echo '<h2 class="comment__display__titre"> Soyez le premier à laisser un commentaire</h2>';
     else:
-        echo '<h2 class="comment__display__titre" id="comment">' . count($comments) . ' Commentaire</h2>';
+        echo '<h2 class="comment__display__titre" id="comment">' . count($comments) . ' Commentaire(s)</h2>';
     endif; ?>
-    <?php for ($i = 0; $i < count($comments); $i++) : ?>
-        <div class="comment__display__pseudo"><?= $comments[$i]->getAuthor(); ?></div>
-        <div class="comment__display__date">le <?= $comments[$i]->getCommentDateFr(); ?></div>
-        <div class="comment__display__comment" id="<?= $comments[$i]->getId(); ?>"><?= $comments[$i]->getComment(); ?></div>
-        <?php if ($comments[$i]->getReport() === 'non') : ?>
+    <?php foreach ($comments as $comment) : ?>
+        <div class="comment__display__pseudo"><?= $comment->getAuthor(); ?></div>
+        <div class="comment__display__date">le <?= $comment->getCommentDateFr(); ?></div>
+        <div class="comment__display__comment" id="<?= $comment->getId(); ?>"><?= $comment->getComment(); ?></div>
+        <?php if ($comment->getReport() === 'non') : ?>
             <a class="comment__display__btn-report"
-               href="/reportComment/<?= $post->getSlug(); ?>/<?= $comments[$i]->getId(); ?>/<?= $comments[$i]->getPostId(); ?>">Signaler ce
+               href="/reportComment/<?= $post->getSlug(); ?>/<?= $comment->getId(); ?>/<?= $comment->getPostId(); ?>">Signaler ce
                 commentaire</a>
         <?php else: ?>
             <div class="comment__display__btn-report comment__display__btn-report-active">Commentaire signalé</div>
         <?php endif; ?>
         <hr class="comment__display__tr">
-    <?php endfor; ?>
+    <?php endforeach; ?>
 </div>
 
 <div class="comment__add box">

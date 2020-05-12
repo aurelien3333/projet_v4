@@ -4,7 +4,7 @@
 class CommentManager extends Manager
 {
 
-    public function getListByPostId($postId)
+    public function getListByPostId(int $postId)
     {
         $comments = [];
 
@@ -16,7 +16,6 @@ class CommentManager extends Manager
         }
         return $comments;
     }
-
 
     public function getList()
     {
@@ -33,7 +32,7 @@ class CommentManager extends Manager
         return $comments;
     }
 
-    public function get($id)
+    public function get(int $id)
     {
         $id = (int)$id;
         $db = $this->dbConnect();
@@ -65,7 +64,7 @@ class CommentManager extends Manager
 
     }
 
-    public function report($id)
+    public function report(int $id)
     {
 
         $db = $this->dbConnect();
