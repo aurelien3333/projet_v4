@@ -1,8 +1,7 @@
 <?php
 
-
 class AdminController{
-
+    //affiche la vue admin la liste des articles et des commentaires
     function display()
     {
         $postManager = new PostManager();
@@ -12,5 +11,4 @@ class AdminController{
 
         require ('./View/admin.php');
     }
-
 }

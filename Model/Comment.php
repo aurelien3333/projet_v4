@@ -11,7 +11,6 @@ class Comment
     private $_report;
     private $_slug_post;
 
-
     public function __construct(array $donnees)
     {
         $this->hydrate($donnees);
@@ -124,11 +123,4 @@ class Comment
     {
         $this->_title_post = $title_post;
     }
-
-
-
-
-
-
-
 }

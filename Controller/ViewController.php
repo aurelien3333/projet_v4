@@ -1,7 +1,7 @@
 <?php
 
 class ViewController
-{
+{   //Apel une vue en fonction du paramétre qu'il reçoit
     public function Display(string $view = "home")
     {
         if ($view === "biographie") {

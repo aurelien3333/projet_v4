@@ -1,10 +1,7 @@
 <?php
 
-//use Model\Post;
-
 class PostManager extends Manager
-{
-
+{   //Retourne la liste des articles
     public function getList()
     {
         $posts = [];
@@ -17,7 +14,7 @@ class PostManager extends Manager
         }
         return $posts;
     }
-
+    //Récupére un article par son id
     public function getById(int $id)
     {
         $id = (int)$id;
@@ -28,10 +25,10 @@ class PostManager extends Manager
         if ($donnees !== false) {
             return new Post($donnees);
         } else {
-            throw new Exception('Identifiant incorrect');
+            throw new Exception('Id article incorrect');
         }
     }
-
+    //Ajout un article a la bdd
     public function add(Post $post)
     {
         $slug = $this->createSlug($post);
@@ -45,14 +42,12 @@ class PostManager extends Manager
         $req->bindValue(':slug', $slug, PDO::PARAM_STR);
         $req->bindValue(':creation_date', date('Y-m-d H:i:s'), PDO::PARAM_STR);
 
-
         $req->execute();
     }
-
+    //Met a jour un article
     public function update(Post $post)
     {
         $slug = $this->createSlug($post);
-
         $db = $this->dbConnect();
         $req = $db->prepare('UPDATE posts SET author = :author, title = :title, content = :content, slug = :slug, creation_date = :creation_date WHERE id = :id');
 
@@ -65,21 +60,19 @@ class PostManager extends Manager
 
         $req->execute();
     }
-
+    //Supprime un article
     public function delete(Post $post)
     {
         $db = $this->dbConnect();
         $db->exec('DELETE FROM posts WHERE id = ' . $post->getId());
-
     }
-
+    //Méthode qui crée le slug en remplacant les espace par un tiret et les caractéres speciaux
     private function createSlug(Post $post)
     {
-
         $bad = array(
             'à', 'á', 'â', 'ã', 'ä', 'ç', 'è', 'é', 'ê', 'ë', 'ì', 'í',
             'î', 'ï', 'ñ', 'ò', 'ó', 'ô', 'õ', 'ö', 'ù', 'ú', 'û', 'ü',
-            'ý', 'ÿ', ':', ';', '.', '\,', "\'", '\"', '/', '!', '?', '^', '$'
+            'ý', 'ÿ', ':', ';', '.', '\,', '\'', '\"', '/', '!', '?', '^', '$'
         );
         $good = array(
             'a', 'a', 'a', 'a', 'a', 'c', 'e', 'e', 'e', 'e', 'i', 'i',

@@ -1,7 +1,5 @@
 <?php
 
-//namespace Model;
-
 class Post
 {
     private $_id;
@@ -36,9 +34,7 @@ class Post
         if (isset($donnees['creation_date_fr'])) {
             $this->setCreationDateFr($donnees['creation_date_fr']);
         }
-
     }
-
 
     public function getSlug()
     {
@@ -99,6 +95,4 @@ class Post
     {
         $this->_creation_date_fr = $creation_date_fr;
     }
-
-
 }

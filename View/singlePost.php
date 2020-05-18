@@ -21,9 +21,9 @@
         echo '<h2 class="comment__display__titre" id="comment">' . count($comments) . ' Commentaire(s)</h2>';
     endif; ?>
     <?php foreach ($comments as $comment) : ?>
-        <div class="comment__display__pseudo"><?= $comment->getAuthor(); ?></div>
+        <div class="comment__display__pseudo"><?= htmlspecialchars($comment->getAuthor()); ?></div>
         <div class="comment__display__date">le <?= $comment->getCommentDateFr(); ?></div>
-        <div class="comment__display__comment" id="<?= $comment->getId(); ?>"><?= $comment->getComment(); ?></div>
+        <div class="comment__display__comment" id="<?= $comment->getId(); ?>"><?= htmlspecialchars($comment->getComment()); ?></div>
         <?php if ($comment->getReport() === 'non') : ?>
             <a class="comment__display__btn-report"
                href="/reportComment/<?= $post->getSlug(); ?>/<?= $comment->getId(); ?>/<?= $comment->getPostId(); ?>">Signaler ce
@@ -40,9 +40,9 @@
     <p class="comment__add__text">Les champs obligatoires sont indiqués avec *</p>
     <form action="/addComment/<?= $post->getSlug(); ?>/<?= $post->getId(); ?>" class="comment__add__form" method="post">
         <input type="text" id="author_comment" name="author_comment" placeholder="Nom *"
-               class="comment__add__form__pseudo">
+               class="comment__add__form__pseudo" required>
         <textarea name="content_comment" id="content_comment" placeholder="Rédigez votre commentaire"
-                  class="comment__add__form__comment"></textarea>
+                  class="comment__add__form__comment" required></textarea>
         <button type="submit" class="comment__add__form__button">Publier votre commentaire</button>
     </form>
 </div>

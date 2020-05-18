@@ -6,7 +6,7 @@
     <?php foreach ($posts as $post) : ?>
         <article class="list-post__posts">
             <a class="list-post__posts__link" href="/article/<?= $post->getId()?>/<?= $post->getSlug()?>"><h3 class="list-post__posts__titre">
-                <?= $post->getTitle(); ?>
+                <?= htmlspecialchars($post->getTitle()); ?>
             </h3></a>
             <div class="list-post__posts__titre__date">le <?= $post->getCreationDateFr(); ?></div>
             <p class="list-post__contenu__posts">

@@ -1,18 +1,15 @@
 * {
     box-sizing: border-box;
 }
-
 a {
     text-decoration: none;
     color: black;
 }
-
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
 }
-
 .main {
     background: url("/public/img/background2.jpg") fixed;
     min-height: 100%;
@@ -30,14 +27,12 @@ html, body {
     display: flex;
     flex-direction: column;
 }
-
 .home__titre {
     color: white;
     text-align: center;
     font-size: 2em;
     padding-top: 30px;
 }
-
 .home__img {
     width: 200px;
     height: auto;
@@ -46,20 +41,17 @@ html, body {
     border-radius: 10%;
     float: left;
 }
-
 .home__text {
     color: white;
     padding: 20px 20px 0 20px;
     text-align: justify;
     font-size: 22px;
 }
-
 .home__boutons {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
-
 .home__bouton {
     text-decoration: none;
     padding: 15px;
@@ -79,12 +71,10 @@ html, body {
     padding: 15px;
     margin-top: 40px;
 }
-
 .biographie__titre {
     font-size: 2em;
     text-align: center;
 }
-
 .biographie__text {
     text-align: justify;
     font-size: 22px;
@@ -98,7 +88,6 @@ html, body {
     margin: 50px 20px 10px 20px;
     border-radius: 15px;
 }
-
 .addpost__label {
     font-size: 1.5em;
     font-weight: bold;
@@ -107,25 +96,21 @@ html, body {
     border-radius: 15px;
     text-align: center;
 }
-
 .addpost__input {
     width: 45%;
     margin: auto;
     padding: 10px;
 }
-
 .addpost__button {
     width: 30%;
     margin: 30px auto;
     padding: 10px;
     border-radius: 15px;
 }
-
 .tox-tinymce {
     width: 90%;
     margin: auto;
     height: 500px !important;
-
 }
 
 /* Page admin */
@@ -138,16 +123,13 @@ html, body {
     color: white;
     background-color: rgba(0, 0, 0, 0.6);
 }
-
 .admin__tableau {
     width: 95%;
     margin: auto;
 }
-
 .report {
     color: red;
 }
-
 .admin__text {
     text-align: center;
     color: white;
@@ -155,27 +137,21 @@ html, body {
     width: 35%;
     margin: 0 auto 10px auto;
     padding: 10px;
-
 }
-
 .admin__tableau__core {
     background-color: white;
 }
-
 .admin__tableau__header {
     background-color: lightgrey;
     font-weight: bold;
 }
-
 .tableau_admin__btn {
     color: black;
 }
-
 td, th {
     padding: 10px 20px;
     border: 1px solid black;
 }
-
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -190,13 +166,11 @@ table {
     flex-direction: row;
     justify-content: space-between;
 }
-
 .header__logo {
     display: flex;
     flex-direction: row;
     padding: 10px;
 }
-
 .header__logo__titre {
     color: white;
     margin: 0;
@@ -204,17 +178,14 @@ table {
     font-family: 'Dancing Script', cursive;
     font-size: 38px;
 }
-
 .header__logo__img {
     height: 80px;
     width: auto;
 }
-
 .header__menu {
     padding-right: 20px;
     align-self: center;
 }
-
 .header__menu__item {
     text-decoration: none;
     color: white;
@@ -235,12 +206,10 @@ table {
     margin-top: 50px;
     padding: 20px;
 }
-
 .list-post__posts__link {
     text-decoration: none;
     color: #990000;
 }
-
 .list-post__titre {
     text-align: center;
     margin: 40px auto 0 auto;
@@ -251,30 +220,24 @@ table {
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 15px;
 }
-
 .list-post__trait {
     width: 100%;
 }
-
 .list-post__posts__titre {
     padding: 10px;
     font-size: 1.5em;
     font-weight: normal;
     margin: 0;
 }
-
 .list-post__posts__titre__date {
     font-size: 14px;
     font-style: italic;
     padding-left: 10px;
-
 }
-
 .list-post__contenu__posts {
     padding: 20px 10px;
     margin: 0 0 10px 0;
 }
-
 .list-post__contenu__posts__btn-lire-la-suite {
     text-decoration: none;
     text-align: center;
@@ -293,12 +256,10 @@ table {
     margin: auto auto 30px auto;
     padding-bottom: 30px;
 }
-
 .post__trait {
     margin: 0 auto;
     width: 80%;
 }
-
 .post__header {
     display: flex;
     flex-direction: row;
@@ -306,7 +267,6 @@ table {
     padding: 20px;
     margin: 50px 0 0 0;
 }
-
 .post__titre {
     color: #990000;
     margin: 20px;
@@ -314,17 +274,13 @@ table {
     text-align: center;
     font-family: Montserrat, sans-serif;
 }
-
 .post__header__date {
     font-style: italic;
 }
-
 .post__contenu {
     padding: 10px 20px 10px 20px;
     margin-bottom: 10px;
-
 }
-
 .post__contenu > p {
     margin: 2px;
 }
@@ -336,37 +292,30 @@ table {
     padding: 20px 30px 0 30px;
     margin-top: 30px;
 }
-
 .comment__add__title {
     margin: 0;
     color: #990000;
     font-size: 1.5em;
 }
-
 .comment__add__text {
     color: gray;
 }
-
 .comment__add__form {
     display: flex;
     flex-direction: column;
 }
-
 .comment__add__form__pseudo, .comment__add__form__email, .comment__add__form__comment {
     padding: 10px;
     background-color: #ebebeb;
     border: none;
     margin-top: 15px;
 }
-
 .comment__add__form__pseudo, .comment__add__form__email {
     width: 50%;
 }
-
 .comment__add__form__comment {
     height: 150px;
 }
-
 .comment__add__form__button {
     background-color: #990000;
     margin: 20px auto 10px auto;
@@ -382,36 +331,30 @@ table {
     padding: 30px;
     font-size: 14px;
 }
-
 .comment__display__titre {
     margin: 0 0 10px 0;
     color: #990000;
     font-size: 1.5em;
 }
-
 .comment__display__pseudo {
     font-weight: bold;
     color: #990000;
     padding: 10px 0;
     font-size: 1.2em;
 }
-
 .comment__display__date {
     padding-bottom: 10px;
 }
-
 .comment__display__comment {
     padding: 15px;
     background-color: #ebebeb;
     margin: 0 25px;
 
 }
-
 .comment__display__tr {
     margin: 15px 0;
     background-color: gray;
 }
-
 .comment__display__btn-report {
     background: #990000;
     color: white;
@@ -423,7 +366,6 @@ table {
     text-decoration: none;
     border-radius: 8px;
 }
-
 .comment__display__btn-report-active {
     background: #000d9c !important;
 }
@@ -436,23 +378,19 @@ table {
     border-radius: 15px;
     margin: 150px auto auto auto;
     padding-bottom: 15px;
-
 }
-
 .connexion__titre {
     text-align: center;
     padding-top: 20px;
     font-size: 1.8em;
     color: white;
 }
-
 .connexion__form {
     display: flex;
     flex-direction: column;
     width: 90%;
     margin: auto;
 }
-
 .connexion__form__pseudo,
 .connexion__form__pass,
 .connexion__form__bouton {
@@ -461,7 +399,6 @@ table {
     background-color: white;
     color: black;
 }
-
 .connexion__form__bouton {
     background-color: #990000;
     border: none;
@@ -469,7 +406,6 @@ table {
 }
 
 /*footer*/
-
 .footer {
     height: 200px;
     width: 100%;
@@ -477,9 +413,7 @@ table {
     position: absolute;
     bottom: 0;
     color: white;
-
 }
-
 .footer__content {
     width: 960px;
     margin: auto;
@@ -488,23 +422,19 @@ table {
     justify-content: space-between;
     padding: 0 20px;
 }
-
 .footer__content__menu {
     display: flex;
     flex-direction: column;
 }
-
 .footer__content__menu__items {
     padding-bottom: 4px;
     text-decoration: none;
     color: white;
 }
-
 .footer__copyright {
 
     text-align: center;
     padding: 5px 0;
-
 }
 
 /*  Page error   */
@@ -519,49 +449,39 @@ table {
 }
 
 /*responsive */
-
 @media (max-width: 1120px) {
     .header__logo__titre {
         font-size: 32px;
         padding-left: 4px;
     }
-
     .header {
         height: 130px;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-
     .header__menu {
         margin-bottom: 10px;
         font-size: 18px;
     }
-
 }
-
 @media (max-width: 992px) {
     td, th {
         padding: 10px 10px;
         display: flex;
         flex-direction: column;
     }
-
     .header {
         height: 312px;
     }
 
     .header__logo {
-
         padding-bottom: 0;
     }
-
     .header__menu__item {
-
         margin-right: 0;
         padding: 6px;
     }
-
     .header__menu {
         width: 100%;
         text-align: center;
@@ -582,11 +502,11 @@ table {
         padding: 0 20px;
     }
     .footer {
-        height: 420px;
+        height: 450px;
         text-align: center;
     }
     .main {
-        padding-bottom: 420px;
+        padding-bottom: 450px;
     }
     .addpost__input {
         width: 90%;
@@ -615,12 +535,7 @@ table {
         font-size: 22px;
         padding: 15px;
     }
-}
-
-@media (max-width: 768px) {
-
-}
-
-@media (max-width: 540px) {
-
+    .comment__add__form__button {
+        width: 60%;
+    }
 }

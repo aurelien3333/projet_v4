@@ -1,9 +1,8 @@
 <?php
 
-
 class CommentManager extends Manager
 {
-
+    //Récupération des commentaires par l'id d'un post
     public function getListByPostId(int $postId)
     {
         $comments = [];
@@ -16,7 +15,7 @@ class CommentManager extends Manager
         }
         return $comments;
     }
-
+    //Récupération de la list de commentaire
     public function getList()
     {
         $comments = [];
@@ -31,7 +30,7 @@ class CommentManager extends Manager
         }
         return $comments;
     }
-
+    //Récuperation d'un seul comnetaire par son id
     public function get(int $id)
     {
         $id = (int)$id;
@@ -39,10 +38,8 @@ class CommentManager extends Manager
         $req = $db->query('SELECT id, post_id, author, comment, report, DATE_FORMAT(comment_date, \'%d/%m/%Y à %H h %i min\') AS comment_date_fr FROM comments WHERE id = ' . $id);
         $donnees = $req->fetch(PDO::FETCH_ASSOC);
         return new Comment($donnees);
-
-
     }
-
+    //Méthode pour ajouter un commentaire
     public function add(Comment $comment)
     {
         $db = $this->dbConnect();
@@ -55,18 +52,15 @@ class CommentManager extends Manager
 
         $req->execute();
     }
-
-
+    //Supression d'un commentaire
     public function delete(Comment $comment)
     {
         $db = $this->dbConnect();
         $db->exec('DELETE FROM comments WHERE id = ' . $comment->getId());
-
     }
-
+    // Méthode pour reporter un commentaire
     public function report(int $id)
     {
-
         $db = $this->dbConnect();
         $req = $db->prepare('UPDATE comments SET report = :report WHERE id = :id');
 

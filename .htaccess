@@ -3,6 +3,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteBase /
 Options All -Indexes
+ErrorDocument 404 /View/404.php
 
 RewriteRule ^reportComment/([0-9a-z-]+)/([0-9]+)/([0-9]+)$ index.php?action=reportComment&id=$2&postId=$3&slug=$1 [L]
 RewriteRule ^addComment/([0-9a-z-]+)/([0-9]+)$ index.php?action=addComment&postId=$2&slug=$1 [L]

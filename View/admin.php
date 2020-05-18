@@ -13,9 +13,9 @@
 
             <?php foreach ($posts as $post) : ?>
                 <tr class="admin__tableau__core">
-                    <td><a href="/article/<?= $post->getSlug() ?>/<?= $post->getId() ?>"><?= $post->getTitle(); ?></a></td>
+                    <td><a href="/article/<?= $post->getSlug() ?>/<?= $post->getId() ?>"><?= htmlspecialchars($post->getTitle()); ?></a></td>
                     <td><?= $post->getCreationDateFr(); ?></td>
-                    <td><?= $post->getAuthor(); ?></td>
+                    <td><?= htmlspecialchars($post->getAuthor()); ?></td>
                     <td><?= count($commentManager->getListByPostId($post->getId())); ?> Commentaire(s)</td>
                     <td>
                         <a href="/article/<?= $post->getSlug() ?>/<?= $post->getId() ?>"
@@ -31,7 +31,6 @@
         </table>
     </div>
     <h2 class="admin__titre">Gestion des commentaires</h2>
-
 
     <div class="admin__tableau">
 
@@ -50,14 +49,12 @@
             <?php endif; ?>
 
             <?php foreach ($comments as $comment) : ?>
-
                 <?php if ($comment->getReport() === 'oui') : ?>
-
                     <tr class="admin__tableau__core">
-                        <td class="report"><?= $comment->getAuthor() ?></td>
+                        <td class="report"><?= htmlspecialchars($comment->getAuthor()) ?></td>
                         <td class="report"><?= $comment->getCommentDateFr() ?></td>
                         <td class="report"><a href="/article/<?= $comment->getSlugPost() ?>/<?= $comment->getPostId() . '#' . $comment->getId()?>"><?= $comment->getComment() ?></a></td>
-                        <td class="report"><?= $comment->getTitlePost(); ?></td>
+                        <td class="report"><?= htmlspecialchars($comment->getTitlePost()); ?></td>
                         <td>
                             <a href="/article/<?=$comment->getSlugPost() ?>/<?= $comment->getPostId() . '#' . $comment->getId()?>"><i
                                         class="far fa-eye tableau_admin__btn"></i></a>
@@ -67,9 +64,9 @@
                     </tr>
                 <?php else : ?>
                     <tr class="admin__tableau__core">
-                        <td><?= $comment->getAuthor() ?></td>
+                        <td><?= htmlspecialchars($comment->getAuthor()) ?></td>
                         <td><?= $comment->getCommentDateFr() ?></td>
-                        <td><a href="/article/<?= $comment->getSlugPost() ?>/<?= $comment->getPostId() . '#' . $comment->getId()?>"><?= $comment->getComment() ?></a></td>
+                        <td><a href="/article/<?= $comment->getSlugPost() ?>/<?= $comment->getPostId() . '#' . $comment->getId()?>"><?= htmlspecialchars($comment->getComment()) ?></a></td>
                         <td><?= $comment->getTitlePost(); ?></td>
                         <td>
                             <a href="/article/<?= $comment->getSlugPost() ?>/<?= $comment->getPostId() . '#' . $comment->getId()?>"><i

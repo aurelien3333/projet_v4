@@ -1,7 +1,4 @@
-
-
 <?php ob_start(); ?>
-
 
 <form action="/updatePost/<?= $post->getId();?>" method="post" class="addpost">
     <label for="title_post" class="addpost__label">Titre de l'article</label>

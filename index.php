@@ -8,6 +8,7 @@ function LoadClass($classe)
         require './Model/' . $classe . '.php';
     }
 }
+
 spl_autoload_register('LoadClass');
 
 $postController = new PostController();
@@ -22,13 +23,12 @@ try {
     $postSlugClean = isset($_GET['slug']) ? filter_var($_GET['slug'], FILTER_SANITIZE_STRING) : null;
     //nettoyage $_POST
     if (isset($_POST['title_post'], $_POST['content_post'], $_POST['author_post'])) {
-        $postTitleClean = filter_var($_POST['title_post'], FILTER_SANITIZE_STRING);
-//        $postContentClean = filter_var($_POST['content_post'], FILTER_SANITIZE_STRING);
+        $postTitleClean = filter_var($_POST['title_post'], FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
         $postContentClean = $_POST['content_post'];
         $postAuthorClean = filter_var($_POST['author_post'], FILTER_SANITIZE_STRING);
     } elseif (isset($_POST['author_comment'], $_POST['content_comment'])) {
         $authorCommentClean = filter_var($_POST['author_comment'], FILTER_SANITIZE_STRING);
-        $contentCommentClean = filter_var($_POST['content_comment'], FILTER_SANITIZE_STRING);
+        $contentCommentClean = filter_var($_POST['content_comment'], FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
     } elseif (isset($_POST['user_pseudo'], $_POST['user_pwd'])) {
         $pseudoClean = filter_var($_POST['user_pseudo'], FILTER_SANITIZE_STRING);
         $passClean = filter_var($_POST['user_pwd'], FILTER_SANITIZE_STRING);
@@ -49,10 +49,18 @@ try {
         $postController->remove($idClean);
         //Ajoute un article avec le contenue du post (titre, autheur, contenu)
     } elseif ($actionClean === 'addPost' && $connected === true) {
-        $postController->add($postTitleClean, $postContentClean, $postAuthorClean);
+        if ($postContentClean === ''){
+            throw new Exception('le contenu de l\'article ne doit pas être vide');
+        } else {
+            $postController->add($postTitleClean, $postContentClean, $postAuthorClean);
+        }
         //Récupére un article par son id est l'affiche dans l'éditeur de texte pour le modifier
     } elseif ($actionClean === 'modifiedPost' && $connected === true) {
-        $postController->modified($idClean);
+        if ($postContentClean === '') {
+            throw new Exception("le conenue de l\'article ne doit pas être vide");
+        } else {
+            $postController->modified($idClean);
+        }
         //met a jour l'article aprés les modifications
     } elseif ($actionClean === 'updatePost' && $connected === true) {
         $postController->update($postTitleClean, $postContentClean, $postAuthorClean, $idClean);
@@ -74,7 +82,11 @@ try {
         $userController->connexion();
         //affiche un article par son id
     } elseif ($actionClean === 'article') {
-        $postController->get($idClean);
+        if (isset($idClean)) {
+            $postController->get($idClean);
+        } else {
+            throw new Exception('Id article manquant');
+        }
         //ajoute un commentaire avec l'id de l'article et en récupérant les info du post(author, contenu)
     } elseif ($actionClean === 'addComment') {
         $commentController->add($postIdClean, $authorCommentClean, $contentCommentClean, $postSlugClean);

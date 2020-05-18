@@ -1,8 +1,7 @@
 <?php
 
 class User extends Manager
-{
-
+{   //Récupére le mots de passe en fonction du pseu entré par l'utilisateur
     public function getPassByName(string $pseudo)
     {
         $db = $this->dbConnect();
@@ -12,6 +11,5 @@ class User extends Manager
         ));
         $user = $req->fetch();
         return $user;
-
     }
 }
